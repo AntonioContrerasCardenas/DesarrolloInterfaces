@@ -15,36 +15,43 @@ namespace Actividad6
 
         public static List<string> getNombres(List<Alumno> alumnos)
         {
+            return alumnos.Select(a => a.Nombre).ToList();
             throw new NotImplementedException();
         }
 
         public static Alumno getListadoNota(List<Alumno> alumnos, int nota)
         {
+            return alumnos.First(a => a.Nota == nota);
             throw new NotImplementedException();
         }
 
         public static Alumno getPrimerAlumno(List<Alumno> alumnos)
         {
+            return alumnos.First();
             throw new NotImplementedException();
         }
 
         public static Alumno getUltimoAlumno(List<Alumno> alumnos)
         {
+            return alumnos.Last();
             throw new NotImplementedException();
         }
 
         public static int getSumaNota(List<Alumno> alumnos)
         {
+            return alumnos.Sum(a => a.Nota);
             throw new NotImplementedException();
         }
 
         public static int getNotaMaxima(List<Alumno> alumnos)
         {
+            return alumnos.Max(a => a.Nota);
             throw new NotImplementedException();
         }
 
         public static int getNotaMinima(List<Alumno> alumnos)
         {
+            return alumnos.Min(a => a.Nota);
             throw new NotImplementedException();
         }
 
@@ -55,6 +62,7 @@ namespace Actividad6
 
         public static double getNotaMedia(List<Alumno> alumnos)
         {
+            return Math.Round(alumnos.Average(a => a.Nota) ,2);
             throw new NotImplementedException();
         }
     }
