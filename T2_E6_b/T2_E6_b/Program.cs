@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// See https://aka.ms/new-console-template for more information
 
-namespace Ejercicio2
+
+using static Program;
+
+internal class Program
 {
-    
-    internal class Ejercicio2
+    private static void Main(string[] args)
     {
-        static void main(string[] args)
-        {
-            var Libros = new List<Libro>()
+        var Libros = new List<Libro>()
             {
                 new Libro{Titulo= "Don Quijote de la Mancha", IDAutor= 1, FechaPublicacion= 1605,
                 Ventas= 500},
@@ -36,7 +32,7 @@ namespace Ejercicio2
             };
 
 
-            var Autores = new List<Autor>()
+        var Autores = new List<Autor>()
             {
                 new Autor{IDAutor= 1, Nombre= "Miguel de Cervantes"},
                 new Autor{IDAutor=2, Nombre= "Charles Dickens"},
@@ -50,21 +46,55 @@ namespace Ejercicio2
                 new Autor{IDAutor=10, Nombre= "J. D. Salinger"},
             };
 
-            MostrarLibrosMasVendidos(Libros);
-        }
-
-        private static void MostrarLibrosMasVendidos(List<Libro> libros)
-        {
-            var librosVendidos = libros.OrderBy(l => l.IDAutor).Take(3);
-            Console.WriteLine("Los 3 libros mas vendidos son");
-            foreach (var item in librosVendidos)
-            {
-                Console.WriteLine(item.Titulo);
-            }
-            Console.WriteLine();
-        }
+        MostrarLibrosMasVendidos(Libros);
+        MostrarLibrosMenosVendidos(Libros);
+        MostrarNombresAutores(Autores);
+        MostrarLibrosAgrupadosAutor(Libros);
     }
 
+    private static void MostrarLibrosAgrupadosAutor(List<Libro> libros)
+    {
+        var librosVendidos = libros.GroupBy(l => l.IDAutor);
+        Console.WriteLine("Los 3 libros menos vendidos son");
+        foreach (var item in librosVendidos)
+        {
+            Console.WriteLine(item.Titulo);
+        }
+        Console.WriteLine();
+    }
+
+    private static void MostrarNombresAutores(List<Autor> autores)
+    {
+        var autoresCaracteres = autores.Where(l => l.Nombre.Split().Length<10);
+        Console.WriteLine("Los autores cuyos nombres tienen menos de 10 caracteres");
+        foreach (var autor in autoresCaracteres)
+        {
+            Console.WriteLine($"Codigo: {autor.IDAutor}, Nombre: {autor.Nombre}");
+        }
+        Console.WriteLine();
+    }
+
+    private static void MostrarLibrosMenosVendidos(List<Libro> libros)
+    {
+        var librosVendidos = libros.OrderByDescending(l => l.IDAutor).Take(3);
+        Console.WriteLine("Los 3 libros menos vendidos son");
+        foreach (var item in librosVendidos)
+        {
+            Console.WriteLine(item.Titulo);
+        }
+        Console.WriteLine();
+    }
+
+    private static void MostrarLibrosMasVendidos(List<Libro> libros)
+    {
+        var librosVendidos = libros.OrderBy(l => l.IDAutor).Take(3);
+        Console.WriteLine("Los 3 libros mas vendidos son");
+        foreach (var item in librosVendidos)
+        {
+            Console.WriteLine(item.Titulo);
+        }
+        Console.WriteLine();
+    }
     public class Libro
     {
         public string Titulo { get; set; }
@@ -77,5 +107,4 @@ namespace Ejercicio2
         public int IDAutor { get; set; }
         public string Nombre { get; set; }
     }
-
 }
