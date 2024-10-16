@@ -57,6 +57,8 @@ namespace Actividad6
 
         public static int getNotaPorNombre(List<Alumno> alumnos, string v)
         {
+            var alumno = alumnos.FirstOrDefault(a => a.Nombre.Equals(v));
+            return alumno != null ? alumno.Nota : 1;
             throw new NotImplementedException();
         }
 
