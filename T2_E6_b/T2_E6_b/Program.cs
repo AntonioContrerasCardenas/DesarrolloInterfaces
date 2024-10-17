@@ -57,10 +57,10 @@ internal class Program
 
     private static void MostrarLibrosComiencenEl(List<Libro> libros)
     {
-        var librosEl = libros.Where(l => l.Titulo.StartsWith("El"));
+        var librosComienzoEl = libros.Where(l => l.Titulo.StartsWith("El"));
 
         Console.WriteLine("Los libros que comienzan con El son");
-        foreach (var item in librosEl)
+        foreach (var item in librosComienzoEl)
         {
             Console.WriteLine(item.Titulo);
         }
@@ -77,10 +77,11 @@ internal class Program
 
     private static void MostrarLibrosMenor50Anios(List<Libro> libros)
     {
-        var librosMenor = libros.Where(l => 2024 - l.FechaPublicacion < 50);
+        int anioActual = DateTime.Now.Year;
+        var librosRecientes = libros.Where(l => anioActual - l.FechaPublicacion < 50);
 
         Console.WriteLine("Los libros con menos de 50 años son");
-        foreach (var libro in librosMenor)
+        foreach (var libro in librosRecientes)
         {
             Console.WriteLine(libro.Titulo);
         }
@@ -89,13 +90,14 @@ internal class Program
 
     private static void MostrarLibrosAgrupadosAutor(List<Libro> libros, List<Autor> autores)
     {
-        var librosVendidos = libros.GroupBy(l => l.IDAutor);
-        Console.WriteLine("Libros agrupados por autores");
-        foreach (var item in librosVendidos)
+        var librosPorAutor = libros.GroupBy(l => l.IDAutor);
+        Console.WriteLine("Libros agrupados por autores");          
+        foreach (var grupo in librosPorAutor)
         {
-            var nombreAutor = autores.Where(a => a.IDAutor.Equals(item.Key)).Select(item => item.Nombre).FirstOrDefault();
-            Console.WriteLine($"Autor: {nombreAutor}");
-            foreach (var libro in item)
+            //var nombreAutor = autores.Where(a => a.IDAutor.Equals(item.Key)).Select(item => item.Nombre).FirstOrDefault();
+            string autor = autores.FirstOrDefault(a => a.IDAutor == grupo.Key)?.Nombre ?? "Autor desconocido";
+            Console.WriteLine($"Autor: {autor}");
+            foreach (var libro in grupo)
             {
                 Console.WriteLine($"--Libro: {libro.Titulo}");
             }
@@ -116,9 +118,9 @@ internal class Program
 
     private static void MostrarLibrosMenosVendidos(List<Libro> libros)
     {
-        var librosVendidos = libros.OrderBy(l => l.Ventas).Take(3);
+        var librosMenosVendidos = libros.OrderBy(l => l.Ventas).Take(3);
         Console.WriteLine("Los 3 libros menos vendidos son");
-        foreach (var item in librosVendidos)
+        foreach (var item in librosMenosVendidos)
         {
             Console.WriteLine(item.Titulo);
         }
@@ -127,9 +129,9 @@ internal class Program
 
     private static void MostrarLibrosMasVendidos(List<Libro> libros)
     {
-        var librosVendidos = libros.OrderByDescending(l => l.Ventas).Take(3);
+        var librosMasVendidos = libros.OrderByDescending(l => l.Ventas).Take(3);
         Console.WriteLine("Los 3 libros mas vendidos son");
-        foreach (var item in librosVendidos)
+        foreach (var item in librosMasVendidos)
         {
             Console.WriteLine(item.Titulo);
         }
