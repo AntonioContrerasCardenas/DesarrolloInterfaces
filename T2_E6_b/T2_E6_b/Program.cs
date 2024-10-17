@@ -77,7 +77,7 @@ internal class Program
 
     private static void MostrarLibrosMenor50Anios(List<Libro> libros)
     {
-        var librosMenor = libros.Where(l => 2024 - (l.FechaPublicacion + 50) < 0);
+        var librosMenor = libros.Where(l => 2024 - l.FechaPublicacion < 50);
 
         Console.WriteLine("Los libros con menos de 50 años son");
         foreach (var libro in librosMenor)
@@ -116,7 +116,7 @@ internal class Program
 
     private static void MostrarLibrosMenosVendidos(List<Libro> libros)
     {
-        var librosVendidos = libros.OrderByDescending(l => l.IDAutor).Take(3);
+        var librosVendidos = libros.OrderBy(l => l.Ventas).Take(3);
         Console.WriteLine("Los 3 libros menos vendidos son");
         foreach (var item in librosVendidos)
         {
@@ -127,7 +127,7 @@ internal class Program
 
     private static void MostrarLibrosMasVendidos(List<Libro> libros)
     {
-        var librosVendidos = libros.OrderBy(l => l.IDAutor).Take(3);
+        var librosVendidos = libros.OrderByDescending(l => l.Ventas).Take(3);
         Console.WriteLine("Los 3 libros mas vendidos son");
         foreach (var item in librosVendidos)
         {
