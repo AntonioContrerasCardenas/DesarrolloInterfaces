@@ -49,23 +49,63 @@ internal class Program
         MostrarLibrosMasVendidos(Libros);
         MostrarLibrosMenosVendidos(Libros);
         MostrarNombresAutores(Autores);
-        MostrarLibrosAgrupadosAutor(Libros);
+        MostrarLibrosAgrupadosAutor(Libros, Autores);
+        MostrarLibrosMenor50Anios(Libros);
+        MostrarLibroMasViejo(Libros);
+        MostrarLibrosComiencenEl(Libros);
     }
 
-    private static void MostrarLibrosAgrupadosAutor(List<Libro> libros)
+    private static void MostrarLibrosComiencenEl(List<Libro> libros)
     {
-        var librosVendidos = libros.GroupBy(l => l.IDAutor);
-        Console.WriteLine("Los 3 libros menos vendidos son");
-        foreach (var item in librosVendidos)
+        var librosEl = libros.Where(l => l.Titulo.StartsWith("El"));
+
+        Console.WriteLine("Los libros que comienzan con El son");
+        foreach (var item in librosEl)
         {
             Console.WriteLine(item.Titulo);
         }
         Console.WriteLine();
     }
 
+    private static void MostrarLibroMasViejo(List<Libro> libros)
+    {
+        var librosMasViejo = libros.OrderBy(l => l.FechaPublicacion).FirstOrDefault();
+        Console.WriteLine("Libro mas viejo");
+        Console.WriteLine(librosMasViejo != null ? librosMasViejo.Titulo : "Error");
+        Console.WriteLine();
+    }
+
+    private static void MostrarLibrosMenor50Anios(List<Libro> libros)
+    {
+        var librosMenor = libros.Where(l => 2024 - (l.FechaPublicacion + 50) < 0);
+
+        Console.WriteLine("Los libros con menos de 50 años son");
+        foreach (var libro in librosMenor)
+        {
+            Console.WriteLine(libro.Titulo);
+        }
+        Console.WriteLine();
+    }
+
+    private static void MostrarLibrosAgrupadosAutor(List<Libro> libros, List<Autor> autores)
+    {
+        var librosVendidos = libros.GroupBy(l => l.IDAutor);
+        Console.WriteLine("Libros agrupados por autores");
+        foreach (var item in librosVendidos)
+        {
+            var nombreAutor = autores.Where(a => a.IDAutor.Equals(item.Key)).Select(item => item.Nombre).FirstOrDefault();
+            Console.WriteLine($"Autor: {nombreAutor}");
+            foreach (var libro in item)
+            {
+                Console.WriteLine($"--Libro: {libro.Titulo}");
+            }
+        }
+        Console.WriteLine();
+    }
+
     private static void MostrarNombresAutores(List<Autor> autores)
     {
-        var autoresCaracteres = autores.Where(l => l.Nombre.Split().Length<10);
+        var autoresCaracteres = autores.Where(l => l.Nombre.Replace(" ", String.Empty).Length<10);
         Console.WriteLine("Los autores cuyos nombres tienen menos de 10 caracteres");
         foreach (var autor in autoresCaracteres)
         {
