@@ -24,8 +24,9 @@ namespace T2_E7_Clases
 
         public override void Imprimir()
         {
-            base.Imprimir();
             Console.WriteLine($"Sueldo: {sueldo}");
+            base.Imprimir();
+            
         }
     }
 }
