@@ -28,10 +28,11 @@ namespace T2_E8_Herencia_e_intefaz_Archivo.Ej2
             this.Carga = carga;
         }
 
-        public override void precioFinal()
+        public override double PrecioFinal()
         {
-            base.precioFinal();
-            if (this.Carga > 30) this.precio_base += 30;
+            double precioFinal = base.PrecioFinal();
+            if (this.Carga > 30) precioFinal += 50;
+            return precioFinal;
         }
     }
 }

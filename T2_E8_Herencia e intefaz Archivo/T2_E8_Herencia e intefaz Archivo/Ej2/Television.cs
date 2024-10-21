@@ -28,11 +28,13 @@ namespace T2_E8_Herencia_e_intefaz_Archivo.Ej2
         public double resolucion { get; set; } = RESOLUCION;
         public Boolean sintonizadorTDT { get; set; } = SINTONIZADOR;
 
-        public override void precioFinal()
+        public override double PrecioFinal()
         {
-            base.precioFinal();
-            if (this.resolucion > 40) this.precio_base += (this.precio_base * 0.3) ;
-            if (this.sintonizadorTDT) this.precio_base += 50;
+            double precioFinal = base.PrecioFinal();
+            if (this.resolucion > 40) precioFinal += (precioFinal * 0.3) ;
+            if (this.sintonizadorTDT) precioFinal += 50;
+
+            return precioFinal;
         }
 
 
