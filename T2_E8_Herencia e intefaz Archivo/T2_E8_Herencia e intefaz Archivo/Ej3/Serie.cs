@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace T2_E8_Herencia_e_intefaz_Archivo.Ej3
 {
-    public class Serie
+    public class Serie : Entregable
     {
         public const int NUMERO_TEMPORADAS= 3;
         public const Boolean ENTREGADO = false;
 
-        public String Titulo { get; set; } 
+        public String Titulo { get; set; } = "";
         public int NumeroTemporadas { get; set; } = NUMERO_TEMPORADAS;
         public Boolean Entregado { get; set; } = ENTREGADO;
-        public String Creador { get; set; } 
-
-        public String Genero { get; set; }
+        public String Creador { get; set; } = "";
+        public String Genero { get; set; } = "";
 
         public Serie()
         {
@@ -38,7 +37,22 @@ namespace T2_E8_Herencia_e_intefaz_Archivo.Ej3
 
         public override string ToString()
         {
-            return "Hola desde Serie";
+            return $"SERIE: Título: {Titulo}, Temporadas: {NumeroTemporadas}, Género: {Genero}, Creador: {Creador}, Entregado: {Entregado}"; ;
+        }
+
+        public void entregar()
+        {
+            this.Entregado = true;
+        }
+
+        public void devolver()
+        {
+            this.Entregado = false;
+        }
+
+        public bool isEntregado()
+        {
+            return this.Entregado;
         }
     }
 }
