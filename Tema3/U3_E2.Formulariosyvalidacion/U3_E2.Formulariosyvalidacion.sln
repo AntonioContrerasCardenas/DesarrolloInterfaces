@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "U3_E2.Formulariosyvalidacion", "U3_E2.Formulariosyvalidacion.csproj", "{B417D57B-FF9D-4A90-B2B0-F0E4F472EFEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B417D57B-FF9D-4A90-B2B0-F0E4F472EFEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B417D57B-FF9D-4A90-B2B0-F0E4F472EFEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B417D57B-FF9D-4A90-B2B0-F0E4F472EFEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B417D57B-FF9D-4A90-B2B0-F0E4F472EFEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {040CFB83-197E-40F7-A611-F42AD7F755F7}
+	EndGlobalSection
+EndGlobal
