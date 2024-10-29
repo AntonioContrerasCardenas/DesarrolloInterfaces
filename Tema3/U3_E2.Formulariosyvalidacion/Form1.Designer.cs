@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            textBox4 = new TextBox();
+            txtBEmail = new TextBox();
             label8 = new Label();
-            textBox5 = new TextBox();
+            txtBApellido = new TextBox();
             label9 = new Label();
-            textBox3 = new TextBox();
+            txtBNombre = new TextBox();
             label7 = new Label();
-            textBox2 = new TextBox();
+            txtBNif = new TextBox();
             label6 = new Label();
             pictureBox2 = new PictureBox();
             label5 = new Label();
@@ -52,26 +53,37 @@
             label2 = new Label();
             panel4 = new Panel();
             label4 = new Label();
+            errorProviderNif = new ErrorProvider(components);
+            errorProviderNombre = new ErrorProvider(components);
+            errorProviderApellido = new ErrorProvider(components);
+            errorProviderEmail = new ErrorProvider(components);
+            errorProvider = new ErrorProvider(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProviderNif).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderNombre).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderApellido).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderEmail).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.BackColor = SystemColors.ButtonHighlight;
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(textBox4);
+            panel1.Controls.Add(txtBEmail);
             panel1.Controls.Add(label8);
-            panel1.Controls.Add(textBox5);
+            panel1.Controls.Add(txtBApellido);
             panel1.Controls.Add(label9);
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(txtBNombre);
             panel1.Controls.Add(label7);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(txtBNif);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label5);
@@ -82,38 +94,49 @@
             // 
             // button3
             // 
+            button3.BackColor = SystemColors.ButtonShadow;
+            button3.ForeColor = SystemColors.ButtonFace;
             button3.Location = new Point(257, 444);
             button3.Name = "button3";
             button3.Size = new Size(90, 51);
             button3.TabIndex = 14;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            button3.Text = "CrucetaEliminar";
+            button3.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
+            button2.BackColor = SystemColors.ButtonShadow;
+            button2.ForeColor = SystemColors.ButtonFace;
             button2.Location = new Point(150, 444);
             button2.Name = "button2";
             button2.Size = new Size(90, 51);
             button2.TabIndex = 13;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            button2.Text = "Papelera";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
+            button1.BackColor = SystemColors.ButtonShadow;
+            button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ButtonFace;
             button1.Location = new Point(36, 444);
             button1.Name = "button1";
             button1.Size = new Size(90, 51);
             button1.TabIndex = 12;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "+";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // textBox4
+            // txtBEmail
             // 
-            textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(206, 350);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(151, 29);
-            textBox4.TabIndex = 11;
+            txtBEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBEmail.Location = new Point(206, 350);
+            txtBEmail.Name = "txtBEmail";
+            txtBEmail.Size = new Size(151, 29);
+            txtBEmail.TabIndex = 11;
+            txtBEmail.TextChanged += txtBEmail_TextChanged;
+            txtBEmail.Validating += txtBEmail_Validating;
             // 
             // label8
             // 
@@ -127,13 +150,15 @@
             label8.TabIndex = 10;
             label8.Text = "Email";
             // 
-            // textBox5
+            // txtBApellido
             // 
-            textBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(13, 350);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 29);
-            textBox5.TabIndex = 9;
+            txtBApellido.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBApellido.Location = new Point(13, 350);
+            txtBApellido.Name = "txtBApellido";
+            txtBApellido.Size = new Size(150, 29);
+            txtBApellido.TabIndex = 9;
+            txtBApellido.TextChanged += txtBApellido_TextChanged;
+            txtBApellido.Validating += txtBApellido_Validating;
             // 
             // label9
             // 
@@ -147,13 +172,15 @@
             label9.TabIndex = 8;
             label9.Text = "Apellido";
             // 
-            // textBox3
+            // txtBNombre
             // 
-            textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(206, 294);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(151, 29);
-            textBox3.TabIndex = 7;
+            txtBNombre.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBNombre.Location = new Point(206, 294);
+            txtBNombre.Name = "txtBNombre";
+            txtBNombre.Size = new Size(151, 29);
+            txtBNombre.TabIndex = 7;
+            txtBNombre.TextChanged += txtBNombre_TextChanged;
+            txtBNombre.Validating += txtBNombre_Validating;
             // 
             // label7
             // 
@@ -167,13 +194,18 @@
             label7.TabIndex = 6;
             label7.Text = "Nombre";
             // 
-            // textBox2
+            // txtBNif
             // 
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(13, 294);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 29);
-            textBox2.TabIndex = 5;
+            txtBNif.BackColor = SystemColors.Window;
+            txtBNif.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBNif.ForeColor = SystemColors.WindowText;
+            txtBNif.Location = new Point(13, 294);
+            txtBNif.Name = "txtBNif";
+            txtBNif.Size = new Size(150, 29);
+            txtBNif.TabIndex = 5;
+            txtBNif.TextChanged += txtBNif_TextChanged;
+            txtBNif.Validating += txtBNif_Validating;
+            txtBNif.Validated += txtBNif_Validated;
             // 
             // label6
             // 
@@ -246,6 +278,7 @@
             // 
             // panel3
             // 
+            panel3.BackColor = SystemColors.ControlLightLight;
             panel3.Controls.Add(textBox1);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(label2);
@@ -288,6 +321,7 @@
             // 
             // panel4
             // 
+            panel4.BackColor = SystemColors.ButtonHighlight;
             panel4.Controls.Add(label4);
             panel4.Location = new Point(444, 182);
             panel4.Name = "panel4";
@@ -305,6 +339,26 @@
             label4.Size = new Size(139, 21);
             label4.TabIndex = 3;
             label4.Text = "Lista de estudiante";
+            // 
+            // errorProviderNif
+            // 
+            errorProviderNif.ContainerControl = this;
+            // 
+            // errorProviderNombre
+            // 
+            errorProviderNombre.ContainerControl = this;
+            // 
+            // errorProviderApellido
+            // 
+            errorProviderApellido.ContainerControl = this;
+            // 
+            // errorProviderEmail
+            // 
+            errorProviderEmail.ContainerControl = this;
+            // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
             // 
             // Form1
             // 
@@ -327,6 +381,11 @@
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProviderNif).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderNombre).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderApellido).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderEmail).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -348,12 +407,17 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private TextBox textBox4;
+        private TextBox txtBEmail;
         private Label label8;
-        private TextBox textBox5;
+        private TextBox txtBApellido;
         private Label label9;
-        private TextBox textBox3;
+        private TextBox txtBNombre;
         private Label label7;
-        private TextBox textBox2;
+        private TextBox txtBNif;
+        private ErrorProvider errorProviderNif;
+        private ErrorProvider errorProviderNombre;
+        private ErrorProvider errorProviderApellido;
+        private ErrorProvider errorProviderEmail;
+        private ErrorProvider errorProvider;
     }
 }
