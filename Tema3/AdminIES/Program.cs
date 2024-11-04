@@ -1,4 +1,4 @@
-namespace ValidacionesFormulario
+namespace AdminIES
 {
     internal static class Program
     {
