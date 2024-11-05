@@ -161,6 +161,7 @@
             btnAgregar.TabIndex = 12;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnModificar
             // 
@@ -197,12 +198,14 @@
             btnExaminar.TabIndex = 16;
             btnExaminar.Text = "Examinar";
             btnExaminar.UseVisualStyleBackColor = true;
+            btnExaminar.Click += btnExaminar_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Location = new Point(25, 70);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(202, 273);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
             // 

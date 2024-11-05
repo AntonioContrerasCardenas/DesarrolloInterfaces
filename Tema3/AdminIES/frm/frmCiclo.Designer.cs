@@ -37,8 +37,6 @@
             btnBorrar = new Button();
             btnCancelar = new Button();
             dataGridView1 = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            NombreCiclo = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -92,6 +90,7 @@
             btnModificar.TabIndex = 5;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnBorrar
             // 
@@ -101,6 +100,7 @@
             btnBorrar.TabIndex = 6;
             btnBorrar.Text = "Borrar";
             btnBorrar.UseVisualStyleBackColor = true;
+            btnBorrar.Click += btnBorrar_Click;
             // 
             // btnCancelar
             // 
@@ -110,25 +110,15 @@
             btnCancelar.TabIndex = 7;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, NombreCiclo });
             dataGridView1.Location = new Point(45, 193);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(697, 150);
             dataGridView1.TabIndex = 8;
-            // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            // 
-            // NombreCiclo
-            // 
-            NombreCiclo.HeaderText = "NombreCiclo";
-            NombreCiclo.Name = "NombreCiclo";
             // 
             // frmCiclo
             // 
@@ -162,7 +152,5 @@
         private Button btnBorrar;
         private Button btnCancelar;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn NombreCiclo;
     }
 }

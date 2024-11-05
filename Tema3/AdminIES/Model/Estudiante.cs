@@ -15,5 +15,29 @@ namespace AdminIES.Model
         public int Ciclo { get; set; }
         public string Email { get; set; }
         public byte[] FotoEstudiante { get; set; }
+
+        public Estudiante(int iD, string nombreEstudiante, string primerApellido, string segundoApellido, int ciclo, string email, byte[] fotoEstudiante)
+        {
+            ID = iD;
+            NombreEstudiante = nombreEstudiante;
+            PrimerApellido = primerApellido;
+            SegundoApellido = segundoApellido;
+            Ciclo = ciclo;
+            Email = email;
+            FotoEstudiante = fotoEstudiante;
+        }
+
+        public Estudiante(string nombreEstudiante, string primerApellido, string segundoApellido, int ciclo, string email)
+        {
+            NombreEstudiante = nombreEstudiante;
+            PrimerApellido = primerApellido;
+            SegundoApellido = segundoApellido;
+            Ciclo = ciclo;
+            Email = email;
+        }
+
+        public Estudiante()
+        {
+        }
     }
 }
