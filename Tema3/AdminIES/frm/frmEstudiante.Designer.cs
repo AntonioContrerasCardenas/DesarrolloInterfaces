@@ -47,11 +47,12 @@
             btnExaminar = new Button();
             pictureBox1 = new PictureBox();
             dataGridView1 = new DataGridView();
-            Nombre = new DataGridViewTextBoxColumn();
-            PrimerApellido = new DataGridViewTextBoxColumn();
-            SegundoApellido = new DataGridViewTextBoxColumn();
-            Email = new DataGridViewTextBoxColumn();
-            Foto = new DataGridViewImageColumn();
+            id = new DataGridViewTextBoxColumn();
+            nombre = new DataGridViewTextBoxColumn();
+            primerapellido = new DataGridViewTextBoxColumn();
+            segundoapellido = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            foto = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -171,6 +172,7 @@
             btnModificar.TabIndex = 13;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnBorrar
             // 
@@ -212,36 +214,41 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, PrimerApellido, SegundoApellido, Email, Foto });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, nombre, primerapellido, segundoapellido, email, foto });
             dataGridView1.Location = new Point(39, 464);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(894, 150);
             dataGridView1.TabIndex = 18;
             // 
-            // Nombre
+            // id
             // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
+            id.HeaderText = "id";
+            id.Name = "id";
             // 
-            // PrimerApellido
+            // nombre
             // 
-            PrimerApellido.HeaderText = "PrimerApellido";
-            PrimerApellido.Name = "PrimerApellido";
+            nombre.HeaderText = "nombre";
+            nombre.Name = "nombre";
             // 
-            // SegundoApellido
+            // primerapellido
             // 
-            SegundoApellido.HeaderText = "SegundoApellido";
-            SegundoApellido.Name = "SegundoApellido";
+            primerapellido.HeaderText = "primerapellido";
+            primerapellido.Name = "primerapellido";
             // 
-            // Email
+            // segundoapellido
             // 
-            Email.HeaderText = "Email";
-            Email.Name = "Email";
+            segundoapellido.HeaderText = "segundoapellido";
+            segundoapellido.Name = "segundoapellido";
             // 
-            // Foto
+            // email
             // 
-            Foto.HeaderText = "Foto";
-            Foto.Name = "Foto";
+            email.HeaderText = "email";
+            email.Name = "email";
+            // 
+            // foto
+            // 
+            foto.HeaderText = "foto";
+            foto.Name = "foto";
             // 
             // frmEstudiante
             // 
@@ -296,10 +303,11 @@
         private Button btnExaminar;
         private PictureBox pictureBox1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn PrimerApellido;
-        private DataGridViewTextBoxColumn SegundoApellido;
-        private DataGridViewTextBoxColumn Email;
-        private DataGridViewImageColumn Foto;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn primerapellido;
+        private DataGridViewTextBoxColumn segundoapellido;
+        private DataGridViewTextBoxColumn email;
+        private DataGridViewImageColumn foto;
     }
 }

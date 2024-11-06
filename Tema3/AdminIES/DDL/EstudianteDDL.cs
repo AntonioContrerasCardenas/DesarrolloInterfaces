@@ -24,10 +24,17 @@ namespace AdminIES.DDL
             return conexion.EjecutarSentencia(sentencia);
         }
 
-        /*public bool Agregar(Estudiante estudiante)
+        public DataSet getEstudiantes()
         {
-            return this.conexion.EjecutarComandoSinRetornarDatos($"Insert into Ciclo(nombre) values ('{}')");
-        }*/
+            SqlCommand sentencia = new SqlCommand("Select * from Estudiante");
+            return conexion.EjecutarSentencia(sentencia);
+        }
+
+        public bool Agregar(Estudiante estudiante)
+        {
+            return this.conexion.EjecutarComandoSinRetornarDatos($"Insert into Estudiante(nombre, primerapellido, segundoapellido, email, foto) " +
+                $"values ('{estudiante.NombreEstudiante}','{estudiante.PrimerApellido}','{estudiante.SegundoApellido}','{estudiante.Email}','{estudiante.FotoEstudiante}')");
+        }
 
 
     }

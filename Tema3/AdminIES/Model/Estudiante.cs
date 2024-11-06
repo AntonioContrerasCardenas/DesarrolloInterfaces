@@ -14,9 +14,9 @@ namespace AdminIES.Model
         public string SegundoApellido { get; set; }
         public int Ciclo { get; set; }
         public string Email { get; set; }
-        public byte[] FotoEstudiante { get; set; }
+        public string FotoEstudiante { get; set; }
 
-        public Estudiante(int iD, string nombreEstudiante, string primerApellido, string segundoApellido, int ciclo, string email, byte[] fotoEstudiante)
+        public Estudiante(int iD, string nombreEstudiante, string primerApellido, string segundoApellido, int ciclo, string email, string fotoEstudiante)
         {
             ID = iD;
             NombreEstudiante = nombreEstudiante;
@@ -24,6 +24,11 @@ namespace AdminIES.Model
             SegundoApellido = segundoApellido;
             Ciclo = ciclo;
             Email = email;
+            FotoEstudiante = fotoEstudiante;
+        }
+
+        public Estudiante(string nombreEstudiante, string primerApellido, string segundoApellido, int ciclo, string email, string fotoEstudiante) : this(nombreEstudiante, primerApellido, segundoApellido, ciclo, email)
+        {
             FotoEstudiante = fotoEstudiante;
         }
 
