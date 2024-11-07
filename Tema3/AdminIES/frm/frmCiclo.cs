@@ -37,7 +37,16 @@ namespace AdminIES.frm
 
         public void recargaDataGrid()
         {
-            dataGridView1.DataSource = cicloddl.MostrarCiclos().Tables[0];
+            DataTable dtCiclos = cicloddl.MostrarCiclos().Tables[0];
+
+            dataGridView1.Rows.Clear();
+
+            foreach (DataRow row in dtCiclos.Rows)
+            {
+                int rowIndex = dataGridView1.Rows.Add();
+                dataGridView1.Rows[rowIndex].Cells["id"].Value = row["id"].ToString();
+                dataGridView1.Rows[rowIndex].Cells["nombre"].Value = row["nombre"].ToString();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -66,9 +75,9 @@ namespace AdminIES.frm
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtId.Text) || String.IsNullOrEmpty(txtNombreCiclo.Text))
+            if (String.IsNullOrEmpty(txtId.Text))
             {
-                MessageBox.Show("Debes introducir el id y nombre del campo a modificar");
+                MessageBox.Show("Debes selecionar una celda");
                 return;
             }
 
@@ -81,6 +90,24 @@ namespace AdminIES.frm
             }
 
             recargaDataGrid();
+            btnCancelar_Click(null, null);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                txtId.Text = id;
+
+                Modificar(e);
+            }
+        }
+
+        private void Modificar(DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+            txtNombreCiclo.Text = dataGridView1.Rows[e.RowIndex].Cells["nombre"].Value.ToString();
         }
     }
 }

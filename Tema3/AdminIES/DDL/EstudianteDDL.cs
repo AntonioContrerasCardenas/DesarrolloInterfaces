@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace AdminIES.DDL
 {
     class EstudianteDDL
@@ -21,7 +22,8 @@ namespace AdminIES.DDL
         public DataSet getCiclos()
         {
             SqlCommand sentencia = new SqlCommand("Select * from Ciclo");
-            return conexion.EjecutarSentencia(sentencia);
+            DataSet toreturn = conexion.EjecutarSentencia(sentencia);
+            return toreturn;
         }
 
         public DataSet getEstudiantes()
@@ -39,6 +41,14 @@ namespace AdminIES.DDL
         internal bool Eliminar(int idEstudiante)
         {
             return this.conexion.EjecutarComandoSinRetornarDatos($"Delete from Estudiante where id = {idEstudiante}");
+        }
+
+        internal bool Modificar(Estudiante e)
+        {
+            string a = $"Update Estudiante set nombre = '{e.NombreEstudiante}',primerapellido = '{e.PrimerApellido}'" +
+                $",segundoapellido = '{e.SegundoApellido}',email = '{e.Email}',foto = '{e.FotoEstudiante}' where id = {e.ID}";
+            return this.conexion.EjecutarComandoSinRetornarDatos($"Update Estudiante set nombre = '{e.NombreEstudiante}',primerapellido = '{e.PrimerApellido}'" +
+                $",segundoapellido = '{e.SegundoApellido}',email = '{e.Email}',foto = '{e.FotoEstudiante}' where id = {e.ID}");
         }
     }
 }

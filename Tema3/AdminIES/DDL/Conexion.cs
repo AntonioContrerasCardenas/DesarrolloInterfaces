@@ -10,13 +10,22 @@ namespace AdminIES.DDL
 {
     class Conexion
     {
-        private string cadenaConexion = "Data Source=DAMX-YY; Initial Catalog=db.Sistema; Integrated Security=True; TrustServerCertificate=True";
+        //private string cadenaConexion = "Data Source=DAMX-YY; Initial Catalog=db.Sistema; Integrated Security=True; TrustServerCertificate=True";
+        private string cadenaConexion = "Data Source=Antonio\\SQLEXPRESS; Initial Catalog=db.Sistema; User ID=Antonio; Password=dam; TrustServerCertificate=True";
 
         SqlConnection sqlConnection;
 
         public SqlConnection EstablecerConexion()
         {
-            this.sqlConnection = new SqlConnection(this.cadenaConexion);
+            try
+            {
+                this.sqlConnection = new SqlConnection(this.cadenaConexion);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+           
             return this.sqlConnection;
         }
 

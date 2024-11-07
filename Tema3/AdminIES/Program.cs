@@ -19,7 +19,7 @@ namespace AdminIES
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEstudiante());
+            Application.Run(new frmCiclo());
         }
     }
 }
