@@ -36,6 +36,9 @@ namespace AdminIES.DDL
                 $"values ('{estudiante.NombreEstudiante}','{estudiante.PrimerApellido}','{estudiante.SegundoApellido}','{estudiante.Email}','{estudiante.FotoEstudiante}')");
         }
 
-
+        internal bool Eliminar(int idEstudiante)
+        {
+            return this.conexion.EjecutarComandoSinRetornarDatos($"Delete from Estudiante where id = {idEstudiante}");
+        }
     }
 }

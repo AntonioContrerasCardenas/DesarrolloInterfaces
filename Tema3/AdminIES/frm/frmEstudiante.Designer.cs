@@ -182,6 +182,7 @@
             btnBorrar.TabIndex = 14;
             btnBorrar.Text = "Borrar";
             btnBorrar.UseVisualStyleBackColor = true;
+            btnBorrar.Click += btnBorrar_Click;
             // 
             // btnCancelar
             // 
@@ -219,6 +220,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(894, 150);
             dataGridView1.TabIndex = 18;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // id
             // 

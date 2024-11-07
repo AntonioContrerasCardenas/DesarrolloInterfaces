@@ -22,6 +22,7 @@ namespace AdminIES.frm
             InitializeComponent();
             RellenaCmbx();
             recargaDataGrid();
+            txtClave.Enabled = false;
         }
 
         private void RellenaCmbx()
@@ -48,14 +49,6 @@ namespace AdminIES.frm
         public void recargaDataGrid()
         {
             DataTable dtEstudiantes = estudianteDDL.getEstudiantes().Tables[0];
-
-            if (!dataGridView1.Columns.Contains("Foto"))
-            {
-                DataGridViewImageColumn imgColumn = new DataGridViewImageColumn();
-                imgColumn.Name = "Foto";
-                imgColumn.HeaderText = "Foto";
-                dataGridView1.Columns.Add(imgColumn);
-            }
 
             dataGridView1.Rows.Clear();
 
@@ -88,7 +81,6 @@ namespace AdminIES.frm
 
             string base64Image = Convert.ToBase64String(imagaenByte);
 
-            //string nombreEstudiante, string primerApellido, string segundoApellido, int ciclo, string email, byte[] fotoEstudiante
             Estudiante estudiante = new Estudiante(txtNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, idCiclo, txtCorreo.Text, base64Image);
 
             estudianteDDL = new EstudianteDDL();
@@ -101,6 +93,30 @@ namespace AdminIES.frm
         {
             if (String.IsNullOrEmpty(txtClave.Text)) return;
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                txtClave.Text = id;
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(txtClave.Text)) { return; }
+
+            int idEstudiante = int.Parse(txtClave.Text);
+
+            if (!estudianteDDL.Eliminar(idEstudiante))
+            {
+                MessageBox.Show($"No se ha podido eliminar el estudiante con id : {idEstudiante}");
+            }
+
+            MessageBox.Show($"Estudiante con id : {idEstudiante} eliminado con exito");
+            recargaDataGrid();
         }
     }
 }
