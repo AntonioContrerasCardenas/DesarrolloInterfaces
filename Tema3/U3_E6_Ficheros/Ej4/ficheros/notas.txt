@@ -1,0 +1,5 @@
+Antonio 10 10
+Jose 9 5
+Paco 5 3
+Lucia 9 7
+Maria 5 9

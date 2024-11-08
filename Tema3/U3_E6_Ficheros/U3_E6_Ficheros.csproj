@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <Folder Include="Ej1\ficheros\" />
+    <Folder Include="Ej4\ficheros\" />
+    <Folder Include="Ej5\ficheros\" />
   </ItemGroup>
 
 </Project>

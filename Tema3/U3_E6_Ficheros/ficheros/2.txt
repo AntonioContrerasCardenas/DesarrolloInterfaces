@@ -1,0 +1,6 @@
+Esto es
+un fichero
+de prueba
+llamado 2
+y de exztension
+.txt
