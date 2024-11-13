@@ -60,7 +60,7 @@ double Dividir (double dividendo, double divisor)
 
 //ArgumentNullException: Excepción de argumento nulo 
 
-void VolverMayusculas (string? s)
+string VolverMayusculas (string? s)
 {
     if ( s is null)
     {
