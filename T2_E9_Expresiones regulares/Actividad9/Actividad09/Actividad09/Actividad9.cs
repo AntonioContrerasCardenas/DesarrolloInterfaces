@@ -25,8 +25,9 @@ namespace Actividad09
         public static bool isSpanish(string telefono)
         {
             String patron = @"\+?(00)?(34)?-?([0-9]{3})-?([0-9]{2})-?([0-9]{2})-?([0-9]{2})?|[0-9]{9}";
+            String patron2 = @"(\+(34|0034)\-?)?((\d{3}(\-\d{2}){3})|\d{9})";
 
-            return Regex.IsMatch(telefono, patron);
+            return Regex.IsMatch(telefono, patron2);
         }
 
         public static bool isCorrectEmail(string email)
@@ -67,7 +68,7 @@ namespace Actividad09
 
         public static bool isBinario(string v)
         {
-            String patron = @"^[1,0]+\z";
+            String patron = @"^[01]+\z";
 
             return Regex.IsMatch(v, patron);
         }

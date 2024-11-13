@@ -118,3 +118,18 @@ throw new ExceptionPersonalizada();
 
 throw new ExceptionPersonalizada("Este es un mensaje nuevo de Excepción ");
 
+
+
+int resultado = CalcularEdad(-5); // Intentar calcular con una edad negativa
+Console.WriteLine("Edad: " + resultado);
+
+
+
+static int CalcularEdad(int edad)
+{
+    if (edad < 0) // Verificamos si la edad es válida
+    {
+        throw new ArgumentOutOfRangeException("edad", "La edad no puede ser negativa.");
+    }
+    return edad;
+}
