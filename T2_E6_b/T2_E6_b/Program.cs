@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
+using System.Linq;
 using static Program;
 
 internal class Program
@@ -90,18 +91,32 @@ internal class Program
 
     private static void MostrarLibrosAgrupadosAutor(List<Libro> libros, List<Autor> autores)
     {
-        var librosPorAutor = libros.GroupBy(l => l.IDAutor);
-        Console.WriteLine("Libros agrupados por autores");          
-        foreach (var grupo in librosPorAutor)
+        //var librosPorAutor = libros.GroupBy(l => l.IDAutor);
+        //Console.WriteLine("Libros agrupados por autores");          
+        //foreach (var grupo in librosPorAutor)
+        //{
+        //    //var nombreAutor = autores.Where(a => a.IDAutor.Equals(item.Key)).Select(item => item.Nombre).FirstOrDefault();
+        //    string autor = autores.FirstOrDefault(a => a.IDAutor == grupo.Key)?.Nombre ?? "Autor desconocido";
+        //    Console.WriteLine($"Autor: {autor}");
+        //    foreach (var libro in grupo)
+        //    {
+        //        Console.WriteLine($"--Libro: {libro.Titulo}");
+        //    }
+        //}
+
+        IEnumerable<IGrouping<int, Libro>> librosAgrupados = libros.GroupBy(l => l.IDAutor);
+        Console.WriteLine("Libros agrupados por autores");
+
+        foreach (IGrouping<int, Libro> item in librosAgrupados)
         {
-            //var nombreAutor = autores.Where(a => a.IDAutor.Equals(item.Key)).Select(item => item.Nombre).FirstOrDefault();
-            string autor = autores.FirstOrDefault(a => a.IDAutor == grupo.Key)?.Nombre ?? "Autor desconocido";
-            Console.WriteLine($"Autor: {autor}");
-            foreach (var libro in grupo)
-            {
-                Console.WriteLine($"--Libro: {libro.Titulo}");
-            }
+            string nombreAutor = autores.FirstOrDefault(a => a.IDAutor.Equals(item.Key))?.Nombre ?? "Autor desconocido";
+
+            Console.WriteLine(nombreAutor);
+            string libross = String.Join(',', item.Select(l => l.Titulo));
+            Console.WriteLine($"Libros: {libross}");
         }
+
+
         Console.WriteLine();
     }
 
