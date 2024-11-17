@@ -26,6 +26,7 @@ namespace Actividad09
         {
             String patron = @"\+?(00)?(34)?-?([0-9]{3})-?([0-9]{2})-?([0-9]{2})-?([0-9]{2})?|[0-9]{9}";
             String patron2 = @"(\+(34|0034)\-?)?((\d{3}(\-\d{2}){3})|\d{9})";
+            String patron3 = @"(\+(34|0034)\-?\d{3}(\-?\d{2}){3})|\d{9}";
 
             return Regex.IsMatch(telefono, patron2);
         }

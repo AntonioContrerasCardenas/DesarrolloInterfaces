@@ -110,6 +110,8 @@ namespace Actividad5
         {
             if(entrada.Length == 0) return 0;
 
+            return entrada.Split(" ").Length;
+
             string[] entradaS = entrada.Split(" ");
             return entradaS.Length;
 

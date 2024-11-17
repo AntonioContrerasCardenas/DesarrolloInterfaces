@@ -40,7 +40,7 @@ namespace Estudio
         }
 
         // Método abstracto: cada animal hace un sonido diferente
-        public abstract void HacerSonido();
+        public virtual void HacerSonido() { }
 
         // Método concreto que todos los animales pueden compartir
         public void Comer()
@@ -56,7 +56,7 @@ namespace Estudio
 
         public override void HacerSonido()
         {
-            Console.WriteLine($"{Nombre} dice: ¡Guau guau!");
+            
         }
 
         public void Caminar()
