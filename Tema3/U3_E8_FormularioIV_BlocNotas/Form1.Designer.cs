@@ -114,41 +114,44 @@
             // btnCortar
             // 
             btnCortar.Name = "btnCortar";
-            btnCortar.Size = new Size(180, 22);
+            btnCortar.Size = new Size(110, 22);
             btnCortar.Text = "Cortar";
             btnCortar.Click += btnCortar_Click;
             // 
             // btnCopiar
             // 
             btnCopiar.Name = "btnCopiar";
-            btnCopiar.Size = new Size(180, 22);
+            btnCopiar.Size = new Size(110, 22);
             btnCopiar.Text = "Copiar";
             btnCopiar.Click += btnCopiar_Click;
             // 
             // btnPegar
             // 
             btnPegar.Name = "btnPegar";
-            btnPegar.Size = new Size(180, 22);
+            btnPegar.Size = new Size(110, 22);
             btnPegar.Text = "Pegar";
             btnPegar.Click += btnPegar_Click;
             // 
             // btnBuscar
             // 
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(180, 22);
+            btnBuscar.Size = new Size(110, 22);
             btnBuscar.Text = "Buscar";
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // btnFuente
             // 
             btnFuente.Name = "btnFuente";
-            btnFuente.Size = new Size(180, 22);
+            btnFuente.Size = new Size(110, 22);
             btnFuente.Text = "Fuente";
+            btnFuente.Click += btnFuente_Click;
             // 
             // btnColor
             // 
             btnColor.Name = "btnColor";
-            btnColor.Size = new Size(180, 22);
+            btnColor.Size = new Size(110, 22);
             btnColor.Text = "Color";
+            btnColor.Click += btnColor_Click;
             // 
             // toolStrip1
             // 
@@ -166,7 +169,8 @@
             pngNuevo.ImageTransparentColor = Color.Magenta;
             pngNuevo.Name = "pngNuevo";
             pngNuevo.Size = new Size(23, 22);
-            pngNuevo.Text = "pngNuevo";
+            pngNuevo.Text = "Nuevo";
+            pngNuevo.Click += btnNuevo_Click;
             // 
             // pngAbrir
             // 
@@ -175,7 +179,8 @@
             pngAbrir.ImageTransparentColor = Color.Magenta;
             pngAbrir.Name = "pngAbrir";
             pngAbrir.Size = new Size(23, 22);
-            pngAbrir.Text = "toolStripButton2";
+            pngAbrir.Text = "Abrir";
+            pngAbrir.Click += btnAbrir_Click;
             // 
             // pngGuardar
             // 
@@ -184,7 +189,8 @@
             pngGuardar.ImageTransparentColor = Color.Magenta;
             pngGuardar.Name = "pngGuardar";
             pngGuardar.Size = new Size(23, 22);
-            pngGuardar.Text = "toolStripButton3";
+            pngGuardar.Text = "Guardar";
+            pngGuardar.Click += btnGuardar_Click;
             // 
             // pngCortar
             // 
@@ -193,7 +199,8 @@
             pngCortar.ImageTransparentColor = Color.Magenta;
             pngCortar.Name = "pngCortar";
             pngCortar.Size = new Size(23, 22);
-            pngCortar.Text = "toolStripButton4";
+            pngCortar.Text = "Cortar";
+            pngCortar.Click += btnCortar_Click;
             // 
             // pngCopiar
             // 
@@ -202,7 +209,8 @@
             pngCopiar.ImageTransparentColor = Color.Magenta;
             pngCopiar.Name = "pngCopiar";
             pngCopiar.Size = new Size(23, 22);
-            pngCopiar.Text = "toolStripButton5";
+            pngCopiar.Text = "Copiar";
+            pngCopiar.Click += btnCopiar_Click;
             // 
             // pngPegar
             // 
@@ -211,7 +219,8 @@
             pngPegar.ImageTransparentColor = Color.Magenta;
             pngPegar.Name = "pngPegar";
             pngPegar.Size = new Size(23, 22);
-            pngPegar.Text = "toolStripButton6";
+            pngPegar.Text = "Pegar";
+            pngPegar.Click += btnPegar_Click;
             // 
             // pngBuscar
             // 
@@ -220,7 +229,8 @@
             pngBuscar.ImageTransparentColor = Color.Magenta;
             pngBuscar.Name = "pngBuscar";
             pngBuscar.Size = new Size(23, 22);
-            pngBuscar.Text = "toolStripButton7";
+            pngBuscar.Text = "Buscar";
+            pngBuscar.Click += btnBuscar_Click;
             // 
             // pngFuente
             // 
@@ -229,7 +239,8 @@
             pngFuente.ImageTransparentColor = Color.Magenta;
             pngFuente.Name = "pngFuente";
             pngFuente.Size = new Size(23, 22);
-            pngFuente.Text = "toolStripButton8";
+            pngFuente.Text = "Fuente";
+            pngFuente.Click += btnFuente_Click;
             // 
             // pngColor
             // 
@@ -238,7 +249,8 @@
             pngColor.ImageTransparentColor = Color.Magenta;
             pngColor.Name = "pngColor";
             pngColor.Size = new Size(23, 22);
-            pngColor.Text = "toolStripButton9";
+            pngColor.Text = "Color";
+            pngColor.Click += btnColor_Click;
             // 
             // richTextBox
             // 
