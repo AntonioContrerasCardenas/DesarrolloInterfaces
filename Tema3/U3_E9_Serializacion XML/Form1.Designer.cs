@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgwBanco = new DataGridView();
             label1 = new Label();
             txtDni = new TextBox();
             label2 = new Label();
@@ -41,19 +41,19 @@
             txtEdad = new TextBox();
             txtTelefono = new TextBox();
             txtNumeroCuenta = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnAddCliente = new Button();
+            btnModificar = new Button();
+            btnEliminar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgwBanco).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgwBanco
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 346);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(929, 182);
-            dataGridView1.TabIndex = 0;
+            dgwBanco.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgwBanco.Location = new Point(12, 346);
+            dgwBanco.Name = "dgwBanco";
+            dgwBanco.Size = new Size(929, 182);
+            dgwBanco.TabIndex = 0;
             // 
             // label1
             // 
@@ -151,41 +151,42 @@
             txtNumeroCuenta.Size = new Size(149, 23);
             txtNumeroCuenta.TabIndex = 12;
             // 
-            // button1
+            // btnAddCliente
             // 
-            button1.Location = new Point(170, 260);
-            button1.Name = "button1";
-            button1.Size = new Size(125, 55);
-            button1.TabIndex = 13;
-            button1.Text = "Añadir Clientes";
-            button1.UseVisualStyleBackColor = true;
+            btnAddCliente.Location = new Point(170, 260);
+            btnAddCliente.Name = "btnAddCliente";
+            btnAddCliente.Size = new Size(125, 55);
+            btnAddCliente.TabIndex = 13;
+            btnAddCliente.Text = "Añadir Clientes";
+            btnAddCliente.UseVisualStyleBackColor = true;
+            btnAddCliente.Click += btnAddCliente_Click;
             // 
-            // button2
+            // btnModificar
             // 
-            button2.Location = new Point(384, 260);
-            button2.Name = "button2";
-            button2.Size = new Size(123, 55);
-            button2.TabIndex = 14;
-            button2.Text = "Modificar Datos";
-            button2.UseVisualStyleBackColor = true;
+            btnModificar.Location = new Point(384, 260);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(123, 55);
+            btnModificar.TabIndex = 14;
+            btnModificar.Text = "Modificar Datos";
+            btnModificar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnEliminar
             // 
-            button3.Location = new Point(610, 260);
-            button3.Name = "button3";
-            button3.Size = new Size(114, 55);
-            button3.TabIndex = 15;
-            button3.Text = "Eliminar Clientes";
-            button3.UseVisualStyleBackColor = true;
+            btnEliminar.Location = new Point(610, 260);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(114, 55);
+            btnEliminar.TabIndex = 15;
+            btnEliminar.Text = "Eliminar Clientes";
+            btnEliminar.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(953, 540);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnModificar);
+            Controls.Add(btnAddCliente);
             Controls.Add(txtNumeroCuenta);
             Controls.Add(txtTelefono);
             Controls.Add(txtEdad);
@@ -198,17 +199,17 @@
             Controls.Add(label2);
             Controls.Add(txtDni);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgwBanco);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgwBanco).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgwBanco;
         private Label label1;
         private TextBox txtDni;
         private Label label2;
@@ -221,8 +222,8 @@
         private TextBox txtEdad;
         private TextBox txtTelefono;
         private TextBox txtNumeroCuenta;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnAddCliente;
+        private Button btnModificar;
+        private Button btnEliminar;
     }
 }
