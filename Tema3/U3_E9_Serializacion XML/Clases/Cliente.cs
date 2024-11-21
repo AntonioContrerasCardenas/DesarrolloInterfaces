@@ -8,12 +8,12 @@ namespace U3_E9_Serializacion_XML.Clases
 {
     public class Cliente
     {
-        private string DNI{ get; set; }
-        private string Nombre { get; set; }
-        private string Direccion { get; set; }
-        private int Edad { get; set; }
-        private int Telefono { get; set; }
-        private int NumCuentaCorriente { get; set; }
+        public string DNI{ get; set; }
+        public string Nombre { get; set; }
+        public string Direccion { get; set; }
+        public int Edad { get; set; }
+        public int Telefono { get; set; }
+        public int NumCuentaCorriente { get; set; }
 
         public Cliente() { }
 

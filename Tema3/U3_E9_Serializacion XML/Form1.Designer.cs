@@ -169,6 +169,7 @@
             btnModificar.TabIndex = 14;
             btnModificar.Text = "Modificar Datos";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
@@ -178,6 +179,7 @@
             btnEliminar.TabIndex = 15;
             btnEliminar.Text = "Eliminar Clientes";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // Form1
             // 
