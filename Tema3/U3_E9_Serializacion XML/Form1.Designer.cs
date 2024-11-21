@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             dgwBanco = new DataGridView();
             label1 = new Label();
             txtDni = new TextBox();
@@ -44,7 +45,9 @@
             btnAddCliente = new Button();
             btnModificar = new Button();
             btnEliminar = new Button();
+            errorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgwBanco).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // dgwBanco
@@ -70,6 +73,7 @@
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(167, 23);
             txtDni.TabIndex = 2;
+            txtDni.Validating += txtDni_Validating;
             // 
             // label2
             // 
@@ -86,6 +90,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(149, 23);
             txtNombre.TabIndex = 4;
+            txtNombre.Validating += txtNombre_Validating;
             // 
             // label3
             // 
@@ -129,6 +134,7 @@
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(167, 23);
             txtDireccion.TabIndex = 9;
+            txtDireccion.Validating += txtDireccion_Validating;
             // 
             // txtEdad
             // 
@@ -136,6 +142,7 @@
             txtEdad.Name = "txtEdad";
             txtEdad.Size = new Size(149, 23);
             txtEdad.TabIndex = 10;
+            txtEdad.Validating += txtEdad_Validating;
             // 
             // txtTelefono
             // 
@@ -143,6 +150,7 @@
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(167, 23);
             txtTelefono.TabIndex = 11;
+            txtTelefono.Validating += txtTelefono_Validating;
             // 
             // txtNumeroCuenta
             // 
@@ -150,6 +158,7 @@
             txtNumeroCuenta.Name = "txtNumeroCuenta";
             txtNumeroCuenta.Size = new Size(149, 23);
             txtNumeroCuenta.TabIndex = 12;
+            txtNumeroCuenta.Validating += txtNumeroCuenta_Validating;
             // 
             // btnAddCliente
             // 
@@ -181,6 +190,10 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -205,6 +218,7 @@
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dgwBanco).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -227,5 +241,6 @@
         private Button btnAddCliente;
         private Button btnModificar;
         private Button btnEliminar;
+        private ErrorProvider errorProvider;
     }
 }

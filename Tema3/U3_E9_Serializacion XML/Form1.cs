@@ -1,4 +1,5 @@
 using System.Data;
+using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 using U3_E9_Serializacion_XML.Clases;
 using U3_E9_Serializacion_XML.Forms;
@@ -11,6 +12,21 @@ namespace U3_E9_Serializacion_XML
         private Banco banco { get; set; }
         public Boolean btnEliminarClicked { get; set; }
         public Boolean btnModificarClicked { get; set; }
+
+        string patronDni = @"^\d{8}[A-Za-z]\z";
+        string mensageDni = "El dni debe estar compuesto por 8 digitos y una letra";
+
+        string patronNombre = @"^[a-zA-Z\s]+\z";
+        string mensageNombre = "Solo se permiten letras y espacios"; 
+        
+        string patronEdad = @"^\d{1,3}\z";
+        string mensageEdad = "La edad deben de ser digitos de maximo 3"; 
+
+        string patronTelefono = @"^\d{9}\z";
+        string mensageTelefono = "El telefono debe de ser de 3 digitos";
+
+        string patronNumCuenta = @"^d{20}\z";
+        string mensageNumCuenta = "El numero de cuenta corriente deben de ser 20 digitos";
 
         public Form1()
         {
@@ -61,6 +77,12 @@ namespace U3_E9_Serializacion_XML
 
         private void btnAddCliente_Click(object sender, EventArgs e)
         {
+
+            if (!ValidaCampos()) {
+                MessageBox.Show("Los cambos son invalidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
 
             string dni = txtDni.Text;
             string nombre = txtNombre.Text;
@@ -162,7 +184,7 @@ namespace U3_E9_Serializacion_XML
 
             btnAddCliente.Enabled = enabled;
             btnModificar.Enabled = enabled;
-            btnEliminar.Enabled = enabled;
+
         }
 
         private void SetCampos(Cliente cEliminar)
@@ -179,6 +201,12 @@ namespace U3_E9_Serializacion_XML
         {
             if (btnModificarClicked)
             {
+                if (!ValidaCampos())
+                {
+                    MessageBox.Show("Los cambos son invalidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 string DniCliente = txtDni.Text;
 
                 Cliente cModificar = banco.Clientes.FirstOrDefault(c => c.DNI.Equals(DniCliente));
@@ -200,6 +228,7 @@ namespace U3_E9_Serializacion_XML
 
                 btnModificarClicked = false;
                 SetBtnEnabled(true);
+                btnEliminar.Enabled = true;
                 ClearCampos();
                 return;
             }
@@ -247,6 +276,83 @@ namespace U3_E9_Serializacion_XML
             txtDni.Enabled = false;
             btnAddCliente.Enabled = false;
             btnEliminar.Enabled = false;
+        }
+
+        private void txtDni_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string patron = @"^\d{8}[A-Za-z]\z";
+            string mensage = "El dni debe estar compuesto por 8 digitos y una letra";
+
+            ValidaCampo(patron, mensage, txtDni);
+        }
+
+        
+
+        private void txtNombre_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string patron = @"^[a-zA-Z\s]+\z";
+            string mensage = "Solo se permiten letras y espacios";
+
+            ValidaCampo(patron, mensage, txtDni);
+        }
+
+        private void txtDireccion_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            /*string patron = @"^\d{8}[A-Za-z]\z"; //Hacer
+            string mensage = "El dni debe estar compuesto por 8 digitos y una letra";
+
+            ValidaCampo(patron, mensage, txtDni)*/;
+        }
+
+        private void txtEdad_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string patron = @"^\d{1,3}\z";
+            string mensage = "La edad deben de ser digitos de maximo 3";
+
+            ValidaCampo(patron, mensage, txtDni);
+        }
+
+        private void txtTelefono_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string patron = @"^\d{9}\z";
+            string mensage = "El telefono debe de ser de 3 digitos";
+
+            ValidaCampo(patron, mensage, txtDni);
+        }
+
+        private void txtNumeroCuenta_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string patron = @"^d{20}\z";
+            string mensage = "El numero de cuenta corriente deben de ser 20 digitos";
+
+            ValidaCampo(patron, mensage, txtDni);
+        }
+
+        private bool ValidaCampo(string patron, string mensage, TextBox textBox)
+        {
+            if (!Regex.IsMatch(textBox.Text, patron))
+            {
+                errorProvider.SetError(textBox, mensage);
+                return false;
+            }
+            else
+            {
+                errorProvider.SetError(textBox, "");
+                return true;
+            }
+        }
+
+        private bool ValidaCampos()
+        {
+            bool valid = true;
+            valid &= ValidaCampo(patronDni, mensageDni, txtDni);
+            valid &= ValidaCampo(patronEdad, mensageEdad, txtEdad);
+            valid &= ValidaCampo(patronNombre, mensageNombre, txtNombre);
+            valid &= ValidaCampo(patronTelefono, mensageTelefono, txtTelefono);
+            valid &= ValidaCampo(patronNumCuenta, mensageNumCuenta, txtNumeroCuenta);
+
+
+            return valid;
         }
     }
 }
