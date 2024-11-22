@@ -13,11 +13,11 @@ namespace U3_E9_Serializacion_XML.Clases
         public string Direccion { get; set; }
         public int Edad { get; set; }
         public int Telefono { get; set; }
-        public int NumCuentaCorriente { get; set; }
+        public float NumCuentaCorriente { get; set; }
 
         public Cliente() { }
 
-        public Cliente(string dNI, string nombre, string direccion, int edad, int telefono, int numCuentaCorriente)
+        public Cliente(string dNI, string nombre, string direccion, int edad, int telefono, float numCuentaCorriente)
         {
             DNI = dNI;
             Nombre = nombre;

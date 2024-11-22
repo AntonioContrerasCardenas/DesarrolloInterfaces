@@ -73,6 +73,7 @@
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(167, 23);
             txtDni.TabIndex = 2;
+            txtDni.Text = "12345656R";
             txtDni.Validating += txtDni_Validating;
             // 
             // label2
@@ -90,6 +91,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(149, 23);
             txtNombre.TabIndex = 4;
+            txtNombre.Text = "Antonio";
             txtNombre.Validating += txtNombre_Validating;
             // 
             // label3
@@ -134,6 +136,7 @@
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(167, 23);
             txtDireccion.TabIndex = 9;
+            txtDireccion.Text = "Calle Marte";
             txtDireccion.Validating += txtDireccion_Validating;
             // 
             // txtEdad
@@ -142,6 +145,7 @@
             txtEdad.Name = "txtEdad";
             txtEdad.Size = new Size(149, 23);
             txtEdad.TabIndex = 10;
+            txtEdad.Text = "12";
             txtEdad.Validating += txtEdad_Validating;
             // 
             // txtTelefono
@@ -150,6 +154,7 @@
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(167, 23);
             txtTelefono.TabIndex = 11;
+            txtTelefono.Text = "123455678";
             txtTelefono.Validating += txtTelefono_Validating;
             // 
             // txtNumeroCuenta
@@ -158,6 +163,7 @@
             txtNumeroCuenta.Name = "txtNumeroCuenta";
             txtNumeroCuenta.Size = new Size(149, 23);
             txtNumeroCuenta.TabIndex = 12;
+            txtNumeroCuenta.Text = "12345678912345678912";
             txtNumeroCuenta.Validating += txtNumeroCuenta_Validating;
             // 
             // btnAddCliente

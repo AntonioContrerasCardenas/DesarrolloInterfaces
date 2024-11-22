@@ -25,8 +25,11 @@ namespace U3_E9_Serializacion_XML
         string patronTelefono = @"^\d{9}\z";
         string mensageTelefono = "El telefono debe de ser de 3 digitos";
 
-        string patronNumCuenta = @"^d{20}\z";
+        string patronNumCuenta = @"^\d{20}\z";
         string mensageNumCuenta = "El numero de cuenta corriente deben de ser 20 digitos";
+
+        string patronDireccion = @"^[\w\s]+$";
+        string mensageDireccion = "Escribe 1 letra aunque sea";
 
         public Form1()
         {
@@ -41,6 +44,9 @@ namespace U3_E9_Serializacion_XML
         {
             banco = CargaBanco();
 
+            btnEliminar.Enabled = banco.Clientes.Count >= 1;
+            btnModificar.Enabled = banco.Clientes.Count >= 1;
+
             DataSet set = new DataSet();
             DataTable dt = new DataTable();
 
@@ -53,7 +59,7 @@ namespace U3_E9_Serializacion_XML
 
             foreach (Cliente c in banco.Clientes)
             {
-                dt.Rows.Add(c.DNI, c.Nombre, c.Direccion, c.Edad, c.Telefono, c.NumCuentaCorriente);
+                dt.Rows.Add(c.DNI, c.Nombre, c.Direccion, c.Edad, c.Telefono, c.NumCuentaCorriente.ToString("F0"));
             }
 
             set.Tables.Add(dt);
@@ -89,7 +95,7 @@ namespace U3_E9_Serializacion_XML
             string direccion = txtDireccion.Text;
             int edad = int.Parse(txtEdad.Text);
             int telefono = int.Parse(txtTelefono.Text);
-            int numCuentaCorriente = int.Parse(txtNumeroCuenta.Text);
+            var numCuentaCorriente = float.Parse(txtNumeroCuenta.Text);
 
 
             Cliente c = new Cliente(dni, nombre, direccion, edad, telefono, numCuentaCorriente);
@@ -112,9 +118,7 @@ namespace U3_E9_Serializacion_XML
                     return;
                 }
 
-                List<Cliente> nuevoBanco = banco.Clientes.Where(c => !c.Equals(cEliminar)).ToList();
-
-                banco.Clientes = nuevoBanco;
+                banco.Clientes.Remove(cEliminar);
 
                 SetXmlBanco();
 
@@ -193,7 +197,7 @@ namespace U3_E9_Serializacion_XML
             txtDireccion.Text = cEliminar.Direccion;
             txtEdad.Text = cEliminar.Edad.ToString();
             txtNombre.Text = cEliminar.Nombre;
-            txtNumeroCuenta.Text = cEliminar.NumCuentaCorriente.ToString();
+            txtNumeroCuenta.Text = cEliminar.NumCuentaCorriente.ToString("F0");
             txtTelefono.Text = cEliminar.Telefono.ToString();
         }
 
@@ -220,7 +224,7 @@ namespace U3_E9_Serializacion_XML
                 cModificar.Direccion = txtDireccion.Text;
                 cModificar.Edad = int.Parse(txtEdad.Text);
                 cModificar.Telefono = int.Parse(txtTelefono.Text);
-                cModificar.NumCuentaCorriente = int.Parse(txtNumeroCuenta.Text);
+                cModificar.NumCuentaCorriente = float.Parse(txtNumeroCuenta.Text);
 
                 //banco.Clientes = nuevoBanco;
 
@@ -260,7 +264,7 @@ namespace U3_E9_Serializacion_XML
                 DNI = txtDni.Text,
                 Edad = int.Parse(txtEdad.Text),
                 Nombre = txtNombre.Text,
-                NumCuentaCorriente = int.Parse(txtNumeroCuenta.Text),
+                NumCuentaCorriente = float.Parse(txtNumeroCuenta.Text),
                 Telefono = int.Parse(txtTelefono.Text),
             };
         }
@@ -280,52 +284,32 @@ namespace U3_E9_Serializacion_XML
 
         private void txtDni_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            string patron = @"^\d{8}[A-Za-z]\z";
-            string mensage = "El dni debe estar compuesto por 8 digitos y una letra";
-
-            ValidaCampo(patron, mensage, txtDni);
+            ValidaCampo(patronDni, mensageDni, txtDni);
         }
-
-        
 
         private void txtNombre_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            string patron = @"^[a-zA-Z\s]+\z";
-            string mensage = "Solo se permiten letras y espacios";
-
-            ValidaCampo(patron, mensage, txtDni);
+            ValidaCampo(patronNombre, mensageNombre, txtNombre);
         }
 
         private void txtDireccion_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            /*string patron = @"^\d{8}[A-Za-z]\z"; //Hacer
-            string mensage = "El dni debe estar compuesto por 8 digitos y una letra";
-
-            ValidaCampo(patron, mensage, txtDni)*/;
+            ValidaCampo(patronDireccion, mensageDireccion, txtDireccion);
         }
 
         private void txtEdad_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            string patron = @"^\d{1,3}\z";
-            string mensage = "La edad deben de ser digitos de maximo 3";
-
-            ValidaCampo(patron, mensage, txtDni);
+            ValidaCampo(patronEdad, mensageEdad, txtEdad);
         }
 
         private void txtTelefono_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            string patron = @"^\d{9}\z";
-            string mensage = "El telefono debe de ser de 3 digitos";
-
-            ValidaCampo(patron, mensage, txtDni);
+            ValidaCampo(patronTelefono, mensageTelefono, txtTelefono);
         }
 
         private void txtNumeroCuenta_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            string patron = @"^d{20}\z";
-            string mensage = "El numero de cuenta corriente deben de ser 20 digitos";
-
-            ValidaCampo(patron, mensage, txtDni);
+            ValidaCampo(patronNumCuenta, mensageNumCuenta, txtNumeroCuenta);
         }
 
         private bool ValidaCampo(string patron, string mensage, TextBox textBox)
@@ -350,7 +334,7 @@ namespace U3_E9_Serializacion_XML
             valid &= ValidaCampo(patronNombre, mensageNombre, txtNombre);
             valid &= ValidaCampo(patronTelefono, mensageTelefono, txtTelefono);
             valid &= ValidaCampo(patronNumCuenta, mensageNumCuenta, txtNumeroCuenta);
-
+            valid &= ValidaCampo(patronDireccion, mensageDireccion, txtDireccion);
 
             return valid;
         }
