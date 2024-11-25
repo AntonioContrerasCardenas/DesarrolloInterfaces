@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "U3_E9_Serializacion XML", "U3_E9_Serializacion XML.csproj", "{4531F137-068A-41ED-B5FE-6E45FBB08EF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "U3_E9_Serializacion XML", "U3_E9_Serializacion XML.csproj", "{4531F137-068A-41ED-B5FE-6E45FBB08EF3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject1", "..\TestProject1\TestProject1.csproj", "{C258F001-7B9D-4D48-8B57-B281608177ED}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "..\Setup1\Setup1.vdproj", "{5C8F7265-8B8B-4C85-9607-6A91AF341D51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,12 @@ Global
 		{4531F137-068A-41ED-B5FE-6E45FBB08EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4531F137-068A-41ED-B5FE-6E45FBB08EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4531F137-068A-41ED-B5FE-6E45FBB08EF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C258F001-7B9D-4D48-8B57-B281608177ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C258F001-7B9D-4D48-8B57-B281608177ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C258F001-7B9D-4D48-8B57-B281608177ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C258F001-7B9D-4D48-8B57-B281608177ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C8F7265-8B8B-4C85-9607-6A91AF341D51}.Debug|Any CPU.ActiveCfg = Debug
+		{5C8F7265-8B8B-4C85-9607-6A91AF341D51}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
