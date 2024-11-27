@@ -1,4 +1,4 @@
-namespace TestProject1
+namespace TestBlogNotas
 {
     [TestClass]
     public class UnitTest1
