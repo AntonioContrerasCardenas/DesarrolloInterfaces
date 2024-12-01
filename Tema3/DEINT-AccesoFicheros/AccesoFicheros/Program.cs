@@ -8,7 +8,7 @@
 
 //Leerlo. 
 
-string ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "hola.txt";
+string ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "hola.txt");
 //Devuelve string con todo el contenido delf fichero 
 var contenido = File.ReadAllText(ruta);
 Console.WriteLine(contenido);
@@ -23,7 +23,7 @@ var lineas= File.ReadAllLines(ruta);
 //Comprobar que exista 
 //Si nos equivocamos en la ruta del archivo nos muestra error FileNotFoundException
 
-if ( File.Exists(ruta)
+if ( File.Exists(ruta))
 {
     Console.WriteLine("Existe");
 }
@@ -88,6 +88,7 @@ var extension = Path.GetExtension(ruta);
 //Combinar rutas 
 
 var rutaCombinada= Path.Combine(ruta, rutaDestino);
+
 
 
 

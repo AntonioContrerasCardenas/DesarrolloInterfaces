@@ -27,7 +27,7 @@ namespace EjemploFormulario
                 MessageBox.Show("No se puede introducir una cadena vacia", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
             }
-
+            
 
             if (string.IsNullOrEmpty(vocal))
             {

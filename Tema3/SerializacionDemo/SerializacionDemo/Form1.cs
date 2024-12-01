@@ -22,6 +22,7 @@ namespace SerializacionDemo
             InitializeComponent();
         }
 
+        //SerializarXML
         private void button1_Click(object sender, EventArgs e)
         {
             Persona p = new Persona(textBox1.Text, textBox2.Text, textBox3.Text);
@@ -36,8 +37,10 @@ namespace SerializacionDemo
 
         }
 
+        //DeSerializarXML
         private void button2_Click(object sender, EventArgs e)
         {
+
             XmlSerializer serializer = new XmlSerializer(typeof(Persona));
 
             using (var stream = new FileStream("person.xml", FileMode.Open))
@@ -51,6 +54,7 @@ namespace SerializacionDemo
 
         }
 
+        //SerializarJSON
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -68,6 +72,7 @@ namespace SerializacionDemo
 
         }
 
+        //DeSerializarJSON
         private void button4_Click(object sender, EventArgs e)
         {
 

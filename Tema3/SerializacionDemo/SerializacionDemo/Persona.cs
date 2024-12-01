@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 
 namespace SerializacionDemo
 {
+    [Serializable]
     public class Persona
     {
         [XmlElement("Codigo")]

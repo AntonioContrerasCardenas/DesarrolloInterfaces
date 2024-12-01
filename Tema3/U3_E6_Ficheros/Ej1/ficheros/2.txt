@@ -1,1 +1,15 @@
-Texto de archivo2
+Texto de archivo1 tal
+Hola que tal estas
+Yo soy manuel buenas
+buenas tardes
+1 tal
+2 tal
+3
+4 2Texto de archivo1 tal
+Hola que tal estas
+Yo soy manuel buenas
+buenas tardes
+1 tal
+2 tal
+3
+4 2

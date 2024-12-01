@@ -71,6 +71,7 @@ namespace U3_E9_Serializacion_XML
             if (!File.Exists(fichero))
             {
                 banco = new Banco();
+                File.Create(fichero);
                 return banco;
             }
 
@@ -168,6 +169,7 @@ namespace U3_E9_Serializacion_XML
             }
 
             MuestraBanco();
+
         }
 
         private void MostrarClienteEliminar(Cliente cEliminar)
