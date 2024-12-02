@@ -34,7 +34,6 @@ namespace AdminIES.frm
             recargaDataGrid();
         }
 
-
         public void recargaDataGrid()
         {
             DataTable dtCiclos = cicloddl.MostrarCiclos().Tables[0];
