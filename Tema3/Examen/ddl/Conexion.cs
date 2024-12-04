@@ -1,15 +1,16 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Data.SqlClient;
 
-namespace AdminIES.DDL
+namespace Examen.ddl
 {
-    class Conexion
+    internal class Conexion
     {
+
         private string cadenaConexion = "Data Source=DAMX-YY; Initial Catalog=db.Sistema; Integrated Security=True; TrustServerCertificate=True";
         //private string cadenaConexion = "Data Source=Antonio\\SQLEXPRESS; Initial Catalog=db.Sistema; User ID=Antonio; Password=dam; TrustServerCertificate=True";
 
@@ -19,14 +20,14 @@ namespace AdminIES.DDL
         {
             try
             {
-                this.sqlConnection = new SqlConnection(this.cadenaConexion);
+                sqlConnection = new SqlConnection(cadenaConexion);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-           
-            return this.sqlConnection;
+
+            return sqlConnection;
         }
 
         public bool EjecutarComandoSinRetornarDatos(string strComando)
@@ -35,7 +36,7 @@ namespace AdminIES.DDL
             {
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.CommandText = strComando;
-                sqlCommand.Connection = this.EstablecerConexion();
+                sqlCommand.Connection = EstablecerConexion();
                 sqlConnection.Open();
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
@@ -54,7 +55,7 @@ namespace AdminIES.DDL
             {
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.CommandText = strComando;
-                sqlCommand.Connection = this.EstablecerConexion();
+                sqlCommand.Connection = EstablecerConexion();
                 sqlConnection.Open();
                 SqlDataAdapter da = new SqlDataAdapter(strComando, sqlConnection);
                 da.Fill(dt);
@@ -76,7 +77,7 @@ namespace AdminIES.DDL
             {
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand = sqlComando;
-                sqlCommand.Connection = this.EstablecerConexion();
+                sqlCommand.Connection = EstablecerConexion();
                 adapter.SelectCommand = sqlCommand;
                 sqlConnection.Open();
                 adapter.Fill(ds);
