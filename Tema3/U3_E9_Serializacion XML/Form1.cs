@@ -59,8 +59,10 @@ namespace U3_E9_Serializacion_XML
 
             foreach (Cliente c in banco.Clientes)
             {
+                comboBox1.Items.Add(c.Nombre);
                 dt.Rows.Add(c.DNI, c.Nombre, c.Direccion, c.Edad, c.Telefono, c.NumCuentaCorriente.ToString("F0"));
             }
+
 
             set.Tables.Add(dt);
             dgwBanco.DataSource = set.Tables[0];
@@ -71,6 +73,7 @@ namespace U3_E9_Serializacion_XML
             if (!File.Exists(fichero))
             {
                 banco = new Banco();
+                File.Create(fichero);
                 return banco;
             }
 
@@ -168,6 +171,7 @@ namespace U3_E9_Serializacion_XML
             }
 
             MuestraBanco();
+
         }
 
         private void MostrarClienteEliminar(Cliente cEliminar)

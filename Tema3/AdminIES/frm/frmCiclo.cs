@@ -34,19 +34,11 @@ namespace AdminIES.frm
             recargaDataGrid();
         }
 
-
         public void recargaDataGrid()
         {
             DataTable dtCiclos = cicloddl.MostrarCiclos().Tables[0];
 
-            dataGridView1.Rows.Clear();
-
-            foreach (DataRow row in dtCiclos.Rows)
-            {
-                int rowIndex = dataGridView1.Rows.Add();
-                dataGridView1.Rows[rowIndex].Cells["id"].Value = row["id"].ToString();
-                dataGridView1.Rows[rowIndex].Cells["nombre"].Value = row["nombre"].ToString();
-            }
+            dataGridView1.DataSource = dtCiclos;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -97,7 +89,7 @@ namespace AdminIES.frm
         {
             if (e.RowIndex >= 0)
             {
-                string id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                var id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
                 txtId.Text = id;
 
                 Modificar(e);

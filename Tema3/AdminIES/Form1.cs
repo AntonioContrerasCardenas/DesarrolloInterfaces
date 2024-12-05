@@ -14,5 +14,11 @@ namespace AdminIES
             frmCiclo frmCiclo = new();
             frmCiclo.ShowDialog();
         }
+
+        private void btnEstudiantes_Click(object sender, EventArgs e)
+        {
+            frmEstudiante frm = new();
+            frm.ShowDialog();
+        }
     }
 }

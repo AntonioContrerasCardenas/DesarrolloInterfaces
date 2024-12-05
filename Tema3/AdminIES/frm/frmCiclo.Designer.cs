@@ -37,8 +37,6 @@
             btnBorrar = new Button();
             btnCancelar = new Button();
             dataGridView1 = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
-            nombre = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -118,22 +116,11 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, nombre });
             dataGridView1.Location = new Point(45, 193);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(697, 150);
             dataGridView1.TabIndex = 8;
             dataGridView1.CellClick += dataGridView1_CellClick;
-            // 
-            // id
-            // 
-            id.HeaderText = "id";
-            id.Name = "id";
-            // 
-            // nombre
-            // 
-            nombre.HeaderText = "nombre";
-            nombre.Name = "nombre";
             // 
             // frmCiclo
             // 
@@ -167,7 +154,5 @@
         private Button btnBorrar;
         private Button btnCancelar;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn nombre;
     }
 }

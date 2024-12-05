@@ -19,7 +19,11 @@ namespace AdminIES
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new frmEstudiante());
+=======
+            Application.Run(new Form1());
+>>>>>>> 32dc60a0f5b7edb16280f58c55f7d892ad83c8c3
         }
     }
 }

@@ -50,6 +50,7 @@
             btnEstudiantes.TabIndex = 1;
             btnEstudiantes.Text = "Estudiantes";
             btnEstudiantes.UseVisualStyleBackColor = true;
+            btnEstudiantes.Click += btnEstudiantes_Click;
             // 
             // Form1
             // 

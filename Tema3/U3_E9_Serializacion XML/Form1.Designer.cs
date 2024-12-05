@@ -46,6 +46,7 @@
             btnModificar = new Button();
             btnEliminar = new Button();
             errorProvider = new ErrorProvider(components);
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgwBanco).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
@@ -200,11 +201,20 @@
             // 
             errorProvider.ContainerControl = this;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(762, 125);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 16;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(953, 540);
+            Controls.Add(comboBox1);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
             Controls.Add(btnAddCliente);
@@ -248,5 +258,6 @@
         private Button btnModificar;
         private Button btnEliminar;
         private ErrorProvider errorProvider;
+        private ComboBox comboBox1;
     }
 }

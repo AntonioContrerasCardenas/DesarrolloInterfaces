@@ -13,9 +13,21 @@ namespace U3_E6_Ficheros.Ej1
             
             string contenidoArchivo1 = File.ReadAllText(f1);
 
-            File.WriteAllText(f2, contenidoArchivo1);
+            File.AppendAllText(f2, contenidoArchivo1);
+            //File.WriteAllText(f2, contenidoArchivo1);
 
             Console.WriteLine("Arhivos copiados correctamente");
+
+            
+            /*try
+            {
+                File.Copy(f1, f2, false); // Copia el contenido directamente
+                Console.WriteLine($"Fichero copiado de {f1} a {f2}.");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }*/
         }
     }
 }
