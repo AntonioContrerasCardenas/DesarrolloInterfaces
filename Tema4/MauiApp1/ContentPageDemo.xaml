@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.ContentPageDemo"
+             Title="ContentPageDemo">
+   
+        <Frame WidthRequest="300" HeightRequest="400" CornerRadius="10" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+            <VerticalStackLayout VerticalOptions="Center">
+                <Label Text="Color Picker" TextColor="Black" HorizontalOptions="Center" FontSize="20"/>
+                <Label Text="Red Value" TextColor="Black" HorizontalOptions="Start"/>
+                <Slider Maximum="360" />
+                <Label Text="Blue Value" TextColor="Black" HorizontalOptions="Start"/>
+                <Slider Maximum="360" />
+                <Label Text="Green Value" TextColor="Black" HorizontalOptions="Start"/>
+                <Slider Maximum="360" />
+
+            <Frame Margin="0,20,0,20" BackgroundColor="White" CornerRadius="10" BorderColor="WhiteSmoke" >
+                <Label Text="HEX Value: " TextColor="Black"/>
+            </Frame>
+
+                <Button Text="Generate Random Color"
+                BackgroundColor="Red"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                        TextColor="White"/>
+            </VerticalStackLayout>
+        </Frame>
+  
+</ContentPage>
