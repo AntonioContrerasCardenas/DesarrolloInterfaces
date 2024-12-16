@@ -3,16 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="P3_Citas.GradientPage"
              Title="GradientPage">
-    <ContentPage.Background>
+    <!--<ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
             <GradientStop x:Name="YellowGradient" Color="Yellow" Offset="0.0" />
             <GradientStop  x:Name="RedGradient" Color="Red" Offset="0.25" />
             <GradientStop  x:Name="BlueGradient" Color="Blue" Offset="0.75" />
             <GradientStop  x:Name="GreenGradient" Color="LimeGreen" Offset="1.0" />
         </LinearGradientBrush>
-    </ContentPage.Background>
+    </ContentPage.Background>-->
 
     <Grid RowDefinitions="5*,*">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop x:Name="YellowGradient" Color="Yellow" Offset="0.0" />
+                <GradientStop x:Name="RedGradient" Color="Red" Offset="0.25" />
+                <GradientStop x:Name="BlueGradient" Color="Blue" Offset="0.75" />
+                <GradientStop x:Name="GreenGradient" Color="LimeGreen" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid Grid.Row="0">
             <Label x:Name="LabelCitas" Text="Hola Mundo"
                HorizontalOptions="Center"
