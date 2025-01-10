@@ -8,7 +8,7 @@ namespace MVVMDem
         {
             InitializeComponent();
 
-            MainPage = new PersonView();
+            MainPage = new CommandView();
         }
     }
 }

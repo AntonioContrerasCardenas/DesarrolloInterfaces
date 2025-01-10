@@ -3,12 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVVMDem.MVVM.Views.PeopleView"
              Title="PeopleView">
-    <VerticalStackLayout>
-        <CollectionView ItemsSource="{Binding People}" SelectionMode="Multiple">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <Frame
+
+
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <CollectionView ItemsSource="{Binding People}" SelectionMode="Multiple">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame
                             Margin="20"
                             BorderColor="DarkGray"
                             CornerRadius="5"
@@ -17,11 +21,12 @@
                             HorizontalOptions="Center"
                             VerticalOptions="CenterAndExpand"
                             >
-                            <Label Text="{Binding Name}" />
-                        </Frame>
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </VerticalStackLayout>
+                                <Label Text="{Binding Name}" />
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

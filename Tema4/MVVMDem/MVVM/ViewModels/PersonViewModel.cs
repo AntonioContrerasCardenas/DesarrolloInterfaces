@@ -12,7 +12,7 @@ namespace MVVMDem.MVVM.ViewModels
             {
                 Name = "Hector",
                 Age = 50,
-                Married = true,
+                Married = "yes",
                 BirthDate = new DateTime(2000, 08, 05),
                 Weight = 100,
                 LunchTime = new TimeSpan(10, 0, 0),
