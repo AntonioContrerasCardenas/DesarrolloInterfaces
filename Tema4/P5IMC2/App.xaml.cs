@@ -1,4 +1,6 @@
-﻿namespace P5IMC2
+﻿using P5IMC2.MVVM.Views;
+
+namespace P5IMC2
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new IMCView();
         }
     }
 }
