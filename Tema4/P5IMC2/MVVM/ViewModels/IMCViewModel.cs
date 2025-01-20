@@ -15,13 +15,5 @@ namespace P5IMC2.MVVM.ViewModels
             };
         }
 
-        public void UpdatePeso(double peso)
-        {
-            IMCModel.Peso = peso;
-        }
-        public void UpdateAltura(double altura)
-        {
-            IMCModel.Altura = altura;
-        }
     }
 }

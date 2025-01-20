@@ -11,6 +11,8 @@ public partial class IMCView : ContentPage
         InitializeComponent();
         mcViewModel = new IMCViewModel();
         BindingContext = mcViewModel;
+
+        UpdateIMC();
     }
 
     private void PesoPointer_ValueChanged(object sender, Syncfusion.Maui.Gauges.ValueChangedEventArgs e)
