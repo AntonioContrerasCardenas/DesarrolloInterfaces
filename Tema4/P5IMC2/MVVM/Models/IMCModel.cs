@@ -1,5 +1,6 @@
 ﻿namespace P5IMC2.MVVM.Models
 {
+    //[AddIn]
     public class IMCModel
     {
         public double Peso { get; set; }
