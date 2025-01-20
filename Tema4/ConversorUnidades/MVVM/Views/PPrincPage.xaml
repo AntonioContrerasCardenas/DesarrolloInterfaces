@@ -15,7 +15,7 @@
         <Grid Grid.Row="1" RowDefinitions="*,*,*" ColumnDefinitions="*,*,*">
             <Grid Grid.Row="0" Grid.Column="0">
                 <Grid.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  />
                 </Grid.GestureRecognizers>
                 <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
                     <Label Text="&#xF0A0;" 
