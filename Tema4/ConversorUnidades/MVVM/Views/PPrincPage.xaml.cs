@@ -7,8 +7,14 @@ public partial class PPrincPage : ContentPage
         InitializeComponent();
     }
 
-    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
+        if (sender is Grid grid)
+        {
+            string conversionType = grid.BindingContext as string;
+            await Navigation.PushAsync(new ConversionView(conversionType));
+        }
+
 
     }
 }

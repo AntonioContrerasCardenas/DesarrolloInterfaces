@@ -12,7 +12,7 @@
                    VerticalOptions="Center" />
         </Grid>
 
-        <Grid Grid.Row="1" RowDefinitions="*,*,*" ColumnDefinitions="*,*,*">
+        <Grid Grid.Row="1" BindingContext="Information" RowDefinitions="*,*,*" ColumnDefinitions="*,*,*">
             <Grid Grid.Row="0" Grid.Column="0">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  />
@@ -26,7 +26,7 @@
                 </VerticalStackLayout>
             </Grid>
 
-            <Grid Grid.Row="0" Grid.Column="1">
+            <Grid Grid.Row="0" BindingContext="Volume" Grid.Column="1">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Grid.GestureRecognizers>
@@ -36,6 +36,97 @@
                FontSize="32"
                HorizontalOptions="Center" />
                     <Label Text="Volumen" FontSize="16" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Grid.GestureRecognizers>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="&#xF044;" 
+                       FontFamily="Icons"
+                       FontSize="32"
+                       HorizontalOptions="Center" />
+                    <Label Text="Altura" FontSize="16" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Grid.GestureRecognizers>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="&#xE835;" 
+           FontFamily="Icons"
+           FontSize="32"
+           HorizontalOptions="Center" />
+                    <Label Text="Masa" FontSize="16" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Grid.GestureRecognizers>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="&#xE801;" 
+           FontFamily="Icons"
+           FontSize="32"
+           HorizontalOptions="Center" />
+                    <Label Text="Temperatura" FontSize="16" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="2">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Grid.GestureRecognizers>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="&#xE802;" 
+           FontFamily="Icons"
+           FontSize="32"
+           HorizontalOptions="Center" />
+                    <Label Text="Energia" FontSize="16" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Grid.GestureRecognizers>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="&#xE803;" 
+           FontFamily="Icons"
+           FontSize="32"
+           HorizontalOptions="Center" />
+                    <Label Text="Area" FontSize="16" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Grid.GestureRecognizers>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="&#xE82A;" 
+           FontFamily="Icons"
+           FontSize="32"
+           HorizontalOptions="Center" />
+                    <Label Text="Velocidad" FontSize="16" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="2">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Grid.GestureRecognizers>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="&#xE800;" 
+           FontFamily="Icons"
+           FontSize="32"
+           HorizontalOptions="Center" />
+                    <Label Text="Duracion" FontSize="16" />
                 </VerticalStackLayout>
             </Grid>
         </Grid>

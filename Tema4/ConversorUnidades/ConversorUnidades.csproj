@@ -68,11 +68,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="MVVM\Models\" />
-		<Folder Include="MVVM\ViewModels\" />
-	</ItemGroup>
-
-	<ItemGroup>
+		<MauiXaml Update="MVVM\Views\ConversionView.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="MVVM\Views\PPrincPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
