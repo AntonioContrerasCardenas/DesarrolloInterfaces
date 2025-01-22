@@ -1,8 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using PropertyChanged;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 using UnitsNet;
 
 namespace ConversorUnidades.MVVM.ViewModels
 {
+    [AddINotifyPropertyChangedInterface]
     public class ConversionViewModel
     {
 
@@ -12,8 +15,8 @@ namespace ConversorUnidades.MVVM.ViewModels
 
         public string SelectedMedidasTo { get; set; }
         public string SelectedMedidasFrom { get; set; }
-        public double ValorAConvertir { get; set; }
-        public double Resultado { get; set; }
+        public double ValorAConvertir { get; set; } = 1;
+        public double Resultado { get; set; } = 1;
 
         public ConversionViewModel() { }
 
@@ -22,11 +25,22 @@ namespace ConversorUnidades.MVVM.ViewModels
             this.QuantityName = conversionType;
             this.FromMedidas = CargaMedidas();
             this.ToMedidas = CargaMedidas();
+            this.SelectedMedidasFrom = FromMedidas.FirstOrDefault();
+            this.SelectedMedidasTo = ToMedidas.Skip(1).FirstOrDefault();
+            CalculateResult();
         }
+
+        public ICommand ReturnCommand => new Command(CalculateResult);
+
+        //public ICommand ReturnCommand()
+        //{
+        //    return new Command(() => CalculateResult());
+        //}
 
         public void CalculateResult()
         {
             Resultado = UnitConverter.ConvertByName(ValorAConvertir, QuantityName, SelectedMedidasFrom, SelectedMedidasTo);
+            Console.WriteLine($"Calculando: {ValorAConvertir} {SelectedMedidasFrom} a {SelectedMedidasTo}");
         }
 
         private ObservableCollection<string> CargaMedidas()

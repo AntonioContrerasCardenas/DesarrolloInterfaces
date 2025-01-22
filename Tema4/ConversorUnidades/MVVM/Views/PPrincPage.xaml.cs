@@ -1,3 +1,5 @@
+using ConversorUnidades.MVVM.ViewModels;
+
 namespace ConversorUnidades.MVVM.Views;
 
 public partial class PPrincPage : ContentPage
@@ -12,7 +14,14 @@ public partial class PPrincPage : ContentPage
         if (sender is Grid grid)
         {
             string conversionType = grid.BindingContext as string;
-            await Navigation.PushAsync(new ConversionView(conversionType));
+            var convertView = new ConversionView
+            {
+                BindingContext = new ConversionViewModel(conversionType)
+            };
+
+
+
+            await Navigation.PushAsync(convertView);
         }
 
 

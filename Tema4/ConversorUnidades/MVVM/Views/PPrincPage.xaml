@@ -39,7 +39,7 @@
                 </VerticalStackLayout>
             </Grid>
 
-            <Grid Grid.Row="0" Grid.Column="2">
+            <Grid Grid.Row="0" BindingContext="Length" Grid.Column="2">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Grid.GestureRecognizers>
@@ -52,7 +52,7 @@
                 </VerticalStackLayout>
             </Grid>
 
-            <Grid Grid.Row="1" Grid.Column="0">
+            <Grid Grid.Row="1" BindingContext="Mass" Grid.Column="0">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Grid.GestureRecognizers>
@@ -65,7 +65,7 @@
                 </VerticalStackLayout>
             </Grid>
 
-            <Grid Grid.Row="1" Grid.Column="1">
+            <Grid Grid.Row="1" BindingContext="Temperature" Grid.Column="1">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Grid.GestureRecognizers>
@@ -78,7 +78,7 @@
                 </VerticalStackLayout>
             </Grid>
 
-            <Grid Grid.Row="1" Grid.Column="2">
+            <Grid Grid.Row="1" BindingContext="Energy" Grid.Column="2">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Grid.GestureRecognizers>
@@ -91,7 +91,7 @@
                 </VerticalStackLayout>
             </Grid>
 
-            <Grid Grid.Row="2" Grid.Column="0">
+            <Grid Grid.Row="2" BindingContext="Area" Grid.Column="0">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Grid.GestureRecognizers>
@@ -104,7 +104,7 @@
                 </VerticalStackLayout>
             </Grid>
 
-            <Grid Grid.Row="2" Grid.Column="1">
+            <Grid Grid.Row="2" BindingContext="Speed" Grid.Column="1">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Grid.GestureRecognizers>
@@ -117,7 +117,7 @@
                 </VerticalStackLayout>
             </Grid>
 
-            <Grid Grid.Row="2" Grid.Column="2">
+            <Grid Grid.Row="2" BindingContext="Duration" Grid.Column="2">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Grid.GestureRecognizers>
