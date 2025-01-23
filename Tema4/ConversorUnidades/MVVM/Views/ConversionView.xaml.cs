@@ -20,8 +20,8 @@ public partial class ConversionView : ContentPage
         //conversionViewModel = new ConversionViewModel(conversionType);
         //BindingContext = conversionViewModel;
 
-        PickerFrom.SelectedIndex = 0;
-        PickerTo.SelectedIndex = 0;
+        //PickerFrom.SelectedIndex = 0;
+        //PickerTo.SelectedIndex = 0;
 
     }
 

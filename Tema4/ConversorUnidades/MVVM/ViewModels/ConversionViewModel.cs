@@ -28,9 +28,10 @@ namespace ConversorUnidades.MVVM.ViewModels
             this.SelectedMedidasFrom = FromMedidas.FirstOrDefault();
             this.SelectedMedidasTo = ToMedidas.Skip(1).FirstOrDefault();
             CalculateResult();
+            ChangeCommand = new Command(() => CalculateResult());
         }
 
-        public ICommand ReturnCommand => new Command(CalculateResult);
+        public ICommand ChangeCommand { get; }
 
         //public ICommand ReturnCommand()
         //{

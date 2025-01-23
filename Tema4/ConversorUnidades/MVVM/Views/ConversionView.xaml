@@ -17,13 +17,13 @@
     <Grid RowDefinitions="*,*">
         <Grid Grid.Row="0" BackgroundColor="#800080">
             <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                <Entry ReturnCommand="{Binding ReturnCommand}" TextChanged="Entry_TextChanged" Text="{Binding ValorAConvertir}" TextColor="White" FontSize="100" HorizontalTextAlignment="Center" />
+                <Entry ReturnCommand="{Binding ChangeCommand}" TextChanged="Entry_TextChanged" Keyboard="Numeric" Text="{Binding ValorAConvertir}" TextColor="White" FontSize="100" HorizontalTextAlignment="Center" />
                 <Picker TextColor="White" ItemsSource="{Binding FromMedidas}" SelectedIndexChanged="PickerTo_SelectedIndexChanged" SelectedItem="{Binding SelectedMedidasFrom}" x:Name="PickerFrom" Title="Convertir de" />
             </VerticalStackLayout>
         </Grid>
         <Grid Grid.Row="1" BackgroundColor="#5c0a5c">
             <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                <Label Text="{Binding Resultado, StringFormat='{0:F2}'}" TextColor="White" FontSize="100" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding Resultado, StringFormat='{0:F3}'}" TextColor="White" FontSize="100" HorizontalTextAlignment="Center" />
                 <Picker TextColor="White" ItemsSource="{Binding ToMedidas}" SelectedIndexChanged="PickerTo_SelectedIndexChanged" SelectedItem="{Binding SelectedMedidasTo}" x:Name="PickerTo" Title="Convertir a" />
             </VerticalStackLayout>
         </Grid>
