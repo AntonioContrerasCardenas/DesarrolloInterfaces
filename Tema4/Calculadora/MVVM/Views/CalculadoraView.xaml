@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculadora.MVVM.Views.CalculadoraView"
+             Title="CalculadoraView">
+    <Grid RowDefinitions="3*, 5*">
+        <VerticalStackLayout Grid.Row="0">
+            <Label StyleClass="LabelTXT, LabelFormula" Text="2+2"/>
+            <Label StyleClass="LabelTXT, LabelResult" Text="4" />
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="1">
+            <BoxView />
+            <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*,*" ColumnSpacing="25">
+                <Button Text="AC" Grid.Row="0" Grid.Column="0"/>
+                <Button Text="DEL" Grid.Row="0" Grid.Column="1"/>
+                <Button Text="%" Grid.Row="0" Grid.Column="2"/>
+                <Button Text="/" Grid.Row="0" Grid.Column="3"/>
+
+
+                <Button Text="7" Grid.Row="1" Grid.Column="0"/>
+                <Button Text="8" Grid.Row="1" Grid.Column="1"/>
+                <Button Text="9" Grid.Row="1" Grid.Column="2"/>
+                <Button Text="*" Grid.Row="1" Grid.Column="3"/>
+
+
+                <Button Text="4" Grid.Row="2" Grid.Column="0"/>
+                <Button Text="5" Grid.Row="2" Grid.Column="1"/>
+                <Button Text="6" Grid.Row="2" Grid.Column="2"/>
+                <Button Text="-" Grid.Row="2" Grid.Column="3"/>
+
+
+                <Button Text="1" Grid.Row="3" Grid.Column="0"/>
+                <Button Text="2" Grid.Row="3" Grid.Column="1"/>
+                <Button Text="3" Grid.Row="3" Grid.Column="2"/>
+                <Button Text="+" Grid.Row="3" Grid.Column="3"/>
+
+                <Button Text="0" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0"/>
+                <Button Text="." Grid.Row="4" Grid.Column="2"/>
+                <Button Text="=" Grid.Row="4" Grid.Column="3"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

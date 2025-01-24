@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Style TargetType="VerticalStackLayout">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+    </Style>
+    <Style Class="LabelTXT" TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="End"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LighTXT}, Dark={StaticResource DarkTXT}}"/>
+    </Style>
+
+    <Style Class="LabelResult" TargetType="Label">
+        <!--<Setter Property="HorizontalTextAlignment" Value="End"/>
+        <Setter Property="Margin" Value="0,0,20,0"/>-->
+        <Setter Property="FontSize" Value="60" />
+    </Style>
+
+    <Style Class="LabelFormula" TargetType="Label">
+        <!--<Setter Property="HorizontalTextAlignment" Value="End"/>-->
+        <!--<Setter Property="Margin" Value="0,0,20,0"/>-->
+        <Setter Property="FontSize" Value="30" />
+    </Style>
+</ResourceDictionary>

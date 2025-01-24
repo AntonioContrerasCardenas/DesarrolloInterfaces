@@ -62,4 +62,17 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<Folder Include="MVVM\ModelsView\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<MauiXaml Update="MVVM\Views\CalculadoraView.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Resources\Styles\CalculadoraDictionary.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+	</ItemGroup>
+
 </Project>
