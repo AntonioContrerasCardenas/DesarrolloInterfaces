@@ -10,6 +10,17 @@
     <Color x:Key="LighTXT">#000000</Color>
     <Color x:Key="DarkTXT">#ffffff</Color>
 
+    <Color x:Key="LighBackgroundBox">#404040</Color>
+    <Color x:Key="DarkBackgroundBox">#f2f2f2</Color>
+
+    <Color x:Key="LighBackgroundGrid">#ffffff</Color>
+    <Color x:Key="DarkBackgroundGrid">#000000</Color>
+
+    <Color x:Key="LighBTN">#272B33</Color>
+    <Color x:Key="DarkBTN">#F7F7F7</Color>
+
+    <Color x:Key="Yellow">#e6e600</Color>
+    <Color x:Key="Red">#e63900</Color>
 
 
 

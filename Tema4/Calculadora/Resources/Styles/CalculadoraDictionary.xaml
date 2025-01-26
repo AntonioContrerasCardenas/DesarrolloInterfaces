@@ -21,4 +21,29 @@
         <!--<Setter Property="Margin" Value="0,0,20,0"/>-->
         <Setter Property="FontSize" Value="30" />
     </Style>
+
+    <Style Class="Container" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LighBackgroundGrid}, Dark={StaticResource DarkBackgroundGrid}}" />
+    </Style>
+
+    <Style TargetType="BoxView">
+        <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource DarkBackgroundBox }, Dark={StaticResource LighBackgroundBox}}"/>
+        <Setter Property="CornerRadius" Value="50,50,0,0"/>
+    </Style>
+
+    <Style x:Key="Btn" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource DarkBTN}, Dark={StaticResource LighBTN}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LighTXT}, Dark={StaticResource DarkTXT}}"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+
+    <Style BasedOn="{StaticResource Btn}" TargetType="Button" /> 
+    <Style x:Key="YellowBTN" BasedOn="{StaticResource Btn}" TargetType="Button">
+        <Setter  Property="TextColor" Value="{StaticResource Yellow}"/>
+    </Style>
+
+    <Style x:Key="RedBTN" BasedOn="{StaticResource Btn}" TargetType="Button">
+        <Setter  Property="TextColor" Value="{StaticResource Red}"/>
+    </Style>
+
 </ResourceDictionary>
