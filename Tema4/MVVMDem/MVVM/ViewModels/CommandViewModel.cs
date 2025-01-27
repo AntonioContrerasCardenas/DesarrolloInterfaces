@@ -11,12 +11,12 @@ namespace MVVMDem.MVVM.ViewModels
         {
             ClickComand = new Command(() =>
             {
-                Application.Current.MainPage.DisplayAlert("Title", "Btn clicked", "OK");
+                App.Current.MainPage.DisplayAlert("Title", "Btn clicked", "OK");
             });
 
             ClickComand1 = new Command((s) =>
             {
-                Application.Current.MainPage.DisplayAlert("Title", s.ToString(), "OK");
+                App.Current.MainPage.DisplayAlert("Title", s.ToString(), "OK");
             });
         }
 

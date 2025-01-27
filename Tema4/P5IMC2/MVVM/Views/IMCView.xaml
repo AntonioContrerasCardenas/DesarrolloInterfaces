@@ -74,7 +74,7 @@ ShowTicks="False">
                                 NeedleEndWidth="15"
                                 NeedleLength="0.6"
                                 NeedleStartWidth="2"
-                                Value="{Binding IMCModel.Resultado()}"/>
+                                Value="{Binding IMCModel.Resultado}"/>
                     </gauge:RadialAxis.Pointers>
                 </gauge:RadialAxis>
             </gauge:SfRadialGauge.Axes>
