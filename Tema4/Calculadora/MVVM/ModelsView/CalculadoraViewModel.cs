@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Dangl.Calculator;
+﻿using Dangl.Calculator;
 using PropertyChanged;
+using System.Windows.Input;
 
 namespace Calculadora.MVVM.ModelsView
 {
@@ -19,18 +14,20 @@ namespace Calculadora.MVVM.ModelsView
 
         public ICommand ResetCommand => new Command(() => { Result = "0"; Formula = ""; });
 
-        public ICommand DeleteLastCommand => new Command(() => {
+        public ICommand DeleteLastCommand => new Command(() =>
+        {
             if (Formula.Length < 0)
                 return;
 
             Formula = Formula.Substring(0, Formula.Length - 1);
-        }); 
+        });
 
-            public ICommand CalculateResultOperation => new Command(() => {
-                if (Formula.Length < 0)
-                    return;
+        public ICommand CalculateResultOperation => new Command(() =>
+        {
+            if (Formula.Length < 0)
+                return;
 
-                Result = Calculator.Calculate(Formula).Result.ToString();
-            });
+            Result = Calculator.Calculate(Formula).Result.ToString();
+        });
     }
 }
